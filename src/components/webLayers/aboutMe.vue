@@ -52,8 +52,20 @@ export default {
     transform: skewY(2deg) skewX(15deg)
 }
 .contain{
-    display: flex;
-    justify-content: space-around;
+    max-width: 114rem;
+    background-color: red!important;
+    margin: 0 10vw;
+    margin-bottom: 8rem;
+    /* display: flex; */
+}
+.col-1{
+    width: calc((100% - 8rem)/2);
+    background-color: blue;
+    margin-right: 8rem;
+    float: left;
+}
+.col-2{
+    background-color: white;
 }
 @keyframes moveInRight {
   0%{
@@ -65,4 +77,5 @@ export default {
     transform: translate(0);
   }
 }
+
 </style>
