@@ -42,7 +42,10 @@ export default {}
 <style scoped>
 .section-about {
   background-color: #f7f7f7;
-  padding: 10rem 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 10rem;
+  padding-bottom: 20rem;
   margin-top: -20vh;
 }
 .center-head {
@@ -78,7 +81,7 @@ export default {}
         display: inline-block;
     }
     .section-about{
-        padding-bottom: 20rem;
+        padding-bottom: 28rem;
     }
     .certificate{
         margin-top: 10%;
