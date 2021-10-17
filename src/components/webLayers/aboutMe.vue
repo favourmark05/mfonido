@@ -49,7 +49,6 @@ export default {}
   text-align: center;
 }
 .heading {
-    /* text-decoration: underline; */
   font-size: 3rem;
   font-weight: 700;
   background-image: linear-gradient(
@@ -141,6 +140,9 @@ top: -10px;
     z-index: 10;
     border: 10px solid rgba(224, 17, 17, 0.775);
     padding: 5px;
+}
+.certificate:hover .certificate-photos:not(:hover){
+    transform: scale(.8);
 }
 @keyframes moveInRight {
   0% {
