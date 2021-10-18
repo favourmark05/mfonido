@@ -63,7 +63,7 @@ export default {
 
 <style scoped>
 .skills{
-    height: 95vh;
+    height: 90vh;
   background-image: linear-gradient(
       to right,
       rgba(189, 61, 61, 0.575),
@@ -103,6 +103,8 @@ export default {
 .contain{
     display: grid;
     grid-template-columns: auto auto auto auto;
+    /* grid-template-rows: min-content; */
+    /* grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); */
     text-align: center;
     transform: skewY(3deg);
 }
