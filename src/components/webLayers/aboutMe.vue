@@ -129,19 +129,19 @@ top: -10px;
 .cert1:hover{
     transform: scale(1.05);
     z-index: 10;
-    border: 10px solid rgba(224, 17, 17, 0.775);
+    border: 5px solid rgba(224, 17, 17, 0.775);
     padding: 5px;
 }
 .cert2:hover{
     transform: scale(1.05);
     z-index: 10;
-    border: 10px solid rgba(224, 17, 17, 0.775);
+    border: 5px solid rgba(224, 17, 17, 0.775);
     padding: 5px;
 }
 .cert3:hover{
     transform: scale(1.05);
     z-index: 10;
-    border: 10px solid rgba(224, 17, 17, 0.775);
+    border: 5px solid rgba(224, 17, 17, 0.775);
     padding: 5px;
 }
 .certificate:hover .certificate-photos:not(:hover){

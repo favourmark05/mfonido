@@ -10,29 +10,44 @@
               <div class="col">
                   <h3>STRUCTURE</h3>
                   <p>HTML5</p>
+                  <hr>
                   <p>CSS3</p>
+                  <hr>
                   <p>BOOTSTRAP</p>
+                  <hr>
                   <p>TAILWIND</p>
+                  <hr>
                   <p>SASS(SCSS)</p>
               </div>
               <div class="col">
                   <h3>LANGUAGES</h3>
                   <p>JAVASCRIPT</p>
+                  <hr>
                   <p>C#</p>
+                  <hr>
               </div>
               <div class="col">
                   <h3>FRAME WORKS</h3>
                   <p>VUEJS</p>
+                  <hr>
                   <p>NUXTJS</p>
+                  <hr>
                   <p>REACT</p>
+                  <hr>
+                  <p>NODEJS</p>
               </div>
               <div class="col">
                   <h3>TOOLS / LIBRARIES</h3>
                   <p>GIT/GITHUB</p>
+                  <hr>
                   <p>NETLIFY</p>
+                  <hr>
                   <p>HEROKU</p>
+                  <hr>
                   <p>COREL DRAW</p>
+                  <hr>
                   <p>FIREBASE</p>
+                  <hr>
                   <p>AXIOS</p>
               </div>
           </div>
@@ -48,7 +63,7 @@ export default {
 
 <style scoped>
 .skills{
-    height: 80vh;
+    height: 95vh;
   background-image: linear-gradient(
       to right,
       rgba(189, 61, 61, 0.575),
@@ -107,12 +122,16 @@ p{
     font-weight: bolder;
 }
 .col:hover{
-    transform: translateY(-20px);
-    /* animation-duration: 10s; */
+    transform: translateY(-30px);
     cursor: pointer;
+    transition: all .7s ease-in-out;
+}
+hr{
+    margin: 0 40px;
 }
 @media only screen and (max-width: 768px) {
     .contain{
+        display: grid;
         grid-template-columns: auto auto;
     }
     .col{
