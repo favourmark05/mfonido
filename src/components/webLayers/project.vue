@@ -62,8 +62,6 @@ text-align: center;
 margin: auto 80px 80px;
 }
 .card{
-    perspective: 1500px;
--moz-perspective: 1500px;
 position: relative;
 }
 .card-side{
@@ -80,7 +78,7 @@ position: relative;
     backface-visibility: hidden;
 }
 .card:hover .card-side-front{
-transform: rotateY(180deg);
+transform: rotateY(-180deg);
 }
 .card:hover .card-side-back{
 transform: rotateY(0);
