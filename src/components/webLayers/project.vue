@@ -1,3 +1,4 @@
+
 <template>
   <div>
       <section class="projects">
@@ -42,7 +43,6 @@
 
 <script>
 export default {
-
 }
 </script>
 
@@ -113,6 +113,8 @@ background-image: linear-gradient(
     ) !important;
 }
 @media only screen and (max-width: 768px){
-
+    .projects-container{
+        grid-template-columns: auto;
+    }
 }
 </style>
