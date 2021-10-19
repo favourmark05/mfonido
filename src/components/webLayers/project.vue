@@ -9,13 +9,16 @@
           <div class="card">
             <div class="card-side card-side-front">
               <div class="card-picture picture1">
-                picture
               </div>
               <h4 class="card-heading">
                 {{ headText }}
               </h4>
               <div class="card-details">
-                Details
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+                  natus repellendus eveniet a dolore quo, praesentium odit unde
+                  modi voluptatum!
+                </p>
               </div>
             </div>
             <div class="card-side card-side-back back1">
@@ -29,13 +32,16 @@
           <div class="card">
             <div class="card-side card-side-front">
               <div class="card-picture picture2">
-                picture
               </div>
               <h4 class="card-heading">
                 {{ headText }}
               </h4>
               <div class="card-details">
-                Details
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+                  natus repellendus eveniet a dolore quo, praesentium odit unde
+                  modi voluptatum!
+                </p>
               </div>
             </div>
             <div class="card-side card-side-back back2">
@@ -48,14 +54,16 @@
         <div class="project-cards">
           <div class="card">
             <div class="card-side card-side-front">
-              <div class="card-picture picture3">
-                picture
-              </div>
+              <div class="card-picture picture3"></div>
               <h4 class="card-heading">
                 {{ headText }}
               </h4>
               <div class="card-details">
-                Details
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+                  natus repellendus eveniet a dolore quo, praesentium odit unde
+                  modi voluptatum!
+                </p>
               </div>
             </div>
             <div class="card-side card-side-back back3">
@@ -74,7 +82,7 @@
 export default {
   data () {
     return {
-      headText: 'Our name'
+      headText: 'Our Name'
     }
   }
 }
@@ -159,6 +167,7 @@ a {
   padding: 5px 30px;
   border-radius: 1em;
   color: red;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .card-link {
   margin-top: 30vh;
@@ -194,14 +203,21 @@ a {
     ),
     url(../../assets/home-office.jpg);
 }
-h4{
+h4 {
+  color: black;
+  position: absolute;
+  left: 40%;
+  top: 35%;
+  font-size: 6vh;
+  font-weight: 300;
+  width: 55%;
+  background-color: rgba(255, 255, 255, 0.301);
+  /* font-family: ; */
+  /* padding: -10px; */
+  /* text-align: right; */
+}
+p{
     color: black;
-    position: absolute;
-    left: 40%;
-    top: 35%;
-    font-size: 6vh;
-    font-weight: 300;
-    width: 55%;
-    /* text-align: right; */
+    text-align: right;
 }
 </style>
