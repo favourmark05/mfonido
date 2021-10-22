@@ -6,7 +6,7 @@
     <div class="container">
       <h1 style="padding-bottom:40px">
         <span class="title-head">Mfonido Mark</span>
-        <span class="title-head-sub">Software Developer (Front-end)</span>
+        <span class="title-head-sub">Front-End Web Developer</span>
       </h1>
       <a href="https://docs.google.com/document/d/1h3csuqWnbbMAzB0B20fwIy5V9Mh72QbUr6fiKBw8phM/edit?usp=sharing" download class="cv" target="_blank">DOWNLOAD RESUME</a>
     </div>
