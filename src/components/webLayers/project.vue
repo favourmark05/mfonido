@@ -78,6 +78,7 @@ export default {}
   padding: 10px;
   color: white;
   border-radius: 1em;
+  font-weight: 700;
 }
 .more-link:hover{
   background-color: rgb(207, 40, 40);
