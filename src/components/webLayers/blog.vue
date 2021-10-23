@@ -66,17 +66,6 @@ export default {}
 
 <style scoped>
 .skills {
-  /* background-image: linear-gradient(
-      to right,
-      rgba(189, 61, 61, 0.575),
-      rgba(206, 79, 79, 0.664)
-    ),
-    url("../../assets/home-office.jpg");
-  background-size: cover;
-  background-position: top;
-  padding-top: 10px;
-  padding-bottom: 10px; */
-  /* display: flex; */
   background: linear-gradient(
       to right,
       rgba(189, 61, 61, 0.575),
@@ -87,13 +76,13 @@ export default {}
   text-align: center;
   position: relative;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 .video-bg{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background-size: cover; */
   object-fit: cover;
   min-width: 100%;
   min-height: 100%;
