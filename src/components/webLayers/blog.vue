@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="more-link">
-        <router-link to="#" class="more">View More</router-link>
+        <router-link to="/blogPage" class="more">View More</router-link>
       </div>
     </div>
   </div>
@@ -184,5 +184,9 @@ p {
   text-decoration: none;
   color: rgb(207, 40, 40);
   font-weight: 700;
+}
+.more:hover{
+  background-color: tomato;
+  color: white;
 }
 </style>

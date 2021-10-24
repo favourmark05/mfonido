@@ -9,8 +9,8 @@
           <nav class="navigation-nav">
               <ul class="nav-list">
                   <li class="nav-item"><router-link to="/" class="nav-link"><span>01</span>Home</router-link></li>
-                  <li class="nav-item"><router-link to="/" class="nav-link"><span>02</span>Projects</router-link></li>
-                  <li class="nav-item"><router-link to="/" class="nav-link"><span>03</span>Blog Post</router-link></li>
+                  <li class="nav-item"><router-link to="/projects" class="nav-link"><span>02</span>Projects</router-link></li>
+                  <li class="nav-item"><router-link to="/blogPage" class="nav-link"><span>03</span>Blog Post</router-link></li>
               </ul>
           </nav>
       </div>

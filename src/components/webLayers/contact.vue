@@ -13,13 +13,14 @@
               placeholder="Full Name"
               v-model="name"
               name="name"
+              class="input"
             />
             <input
               type="email"
               name="email"
               id=""
               placeholder="Email"
-              class="email"
+              class="email input"
               v-model="email"
             />
             <textarea
@@ -29,6 +30,7 @@
               rows="10"
               placeholder="Enter your message here"
               v-model="message"
+              class="textarea"
             ></textarea>
             <br />
             <VueButtonSpinner type="submit" value="send" :isLoading="isLoading" :status="status" v-bind:disabled="!message  || !name || !email">
@@ -156,7 +158,7 @@ export default {
   margin: auto;
   display: grid;
   grid-template-columns: 50% 50%;
-  width: 55vw;
+  width: 70vw;
   text-align: center;
   border-radius: 1em;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.726);
@@ -173,9 +175,14 @@ button:hover {
 }
 input {
   margin: 10px;
+  width: 80%;
+  height: 2.5rem;
 }
 textarea {
-  margin-top: 10px;
+  margin: 10px;
+  width: 80%;
+  border-radius: 1em;
+  padding: 10px;
 }
 .label-name,
 .label-email {
