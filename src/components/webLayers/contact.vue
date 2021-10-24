@@ -11,7 +11,8 @@
             <input
               type="text"
               placeholder="Full Name"
-              v-model="fullName"
+              v-model="name"
+              name="name"
             />
             <input
               type="email"
@@ -30,10 +31,13 @@
               v-model="message"
             ></textarea>
             <br />
-            <button type="submit" value="send" v-bind:disabled="!message  || !fullName || !email">Send Mail</button>
+            <VueButtonSpinner type="submit" value="send" :isLoading="isLoading" :status="status" v-bind:disabled="!message  || !name || !email">
+            Send Mail
+            </VueButtonSpinner>
           </form>
         </div>
-        <div class="col-2"></div>
+        <div class="col-2">
+        </div>
       </div>
     </section>
   </div>
@@ -41,18 +45,25 @@
 
 <script>
 import emailjs from 'emailjs-com'
+import VueButtonSpinner from 'vue-button-spinner'
 export default {
   name: 'ContactMe',
   data () {
     return {
-      fullName: '',
+      name: '',
       email: '',
-      message: ''
+      message: '',
+      isLoading: false,
+      status: ''
     }
+  },
+  components: {
+    VueButtonSpinner
   },
   methods: {
     sendMail (e) {
       try {
+        this.isLoading = true
         emailjs
           .sendForm(
             'service_41yaaok',
@@ -60,12 +71,14 @@ export default {
             e.target,
             'user_JnkbPpytmFMhAyAWo3zVs',
             {
-              fullName: this.fullName,
+              name: this.name,
               email: this.email,
               message: this.message
             }
           )
           .then(() => {
+            this.isLoading = false
+            setTimeout(() => { this.status = '' }, 2000)
             this.$swal.fire(
               'Message Sent!',
               'Will get back to you shortly!',
@@ -76,14 +89,14 @@ export default {
         console.log({ error })
       }
       // Reset form field
-      this.fullName = ''
+      this.name = ''
       this.email = ''
       this.message = ''
     }
   },
   computed: {
     isDisabled () {
-      return this.message.length < 10 && this.fullName === '' && this.email === ''
+      return this.message.length < 10 && this.name === '' && this.email === ''
     }
   }
 }
