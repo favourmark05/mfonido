@@ -65,7 +65,6 @@ export default {
   letter-spacing: 15px;
   animation-name: moveInLeft;
   animation-duration: 2s;
-  /* backface-visibility: hidden; */
 }
 .title-head-sub {
   display: block;
@@ -74,7 +73,6 @@ export default {
   letter-spacing: 7px;
   animation-name: moveInRight;
   animation-duration: 2s;
-  /* backface-visibility: hidden; */
 }
 .cv {
   padding: 10px;

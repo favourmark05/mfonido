@@ -6,6 +6,7 @@
 <project/>
 <blog/>
 <contact/>
+<footerSection/>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import skills from '@/components/webLayers/skills.vue'
 import project from '@/components/webLayers/project.vue'
 import blog from '@/components/webLayers/blog.vue'
 import Contact from './webLayers/contact.vue'
+import footerSection from './webLayers/footerSection.vue'
 export default {
   components: {
     hero,
@@ -23,7 +25,8 @@ export default {
     skills,
     project,
     blog,
-    Contact
+    Contact,
+    footerSection
   }
 
 }

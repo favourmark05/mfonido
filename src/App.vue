@@ -1,9 +1,17 @@
 <template>
   <div>
-    <router-view/>
+    <navigationBar />
+    <router-view />
   </div>
 </template>
 
-<style>
+<script>
+import navigationBar from '@/components/navigationBar.vue'
+export default {
+  components: {
+    navigationBar
+  }
+}
+</script>
 
-</style>
+<style></style>
