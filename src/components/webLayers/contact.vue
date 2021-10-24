@@ -177,6 +177,8 @@ input {
   margin: 10px;
   width: 80%;
   height: 2.5rem;
+  padding: 5px;
+  border-radius: 1em;
 }
 textarea {
   margin: 10px;
