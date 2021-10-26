@@ -3,6 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
+          <router-link to="/articlePreview" class="router-link">
           <div class="content">
             <img src="../../assets/dp.jpg" alt="" srcset="" class="blog-img" />
             <h1>The benefit of Communities</h1>
@@ -22,9 +23,11 @@
               fugiat deleniti?
             </p>
           </div>
+          </router-link>
         </div>
         <div class="col">
-            <div class="content">
+            <router-link to="/articlePreview" class="router-link">
+          <div class="content">
             <img src="../../assets/dp.jpg" alt="" srcset="" class="blog-img" />
             <h1>The benefit of Communities</h1>
             <span><i class="fas fa-calendar-alt"></i>Oct-28-2021</span>
@@ -43,9 +46,11 @@
               fugiat deleniti?
             </p>
           </div>
+          </router-link>
         </div>
         <div class="col">
-            <div class="content">
+            <router-link to="/articlePreview" class="router-link">
+          <div class="content">
             <img src="../../assets/dp.jpg" alt="" srcset="" class="blog-img" />
             <h1>The benefit of Communities</h1>
             <span><i class="fas fa-calendar-alt"></i>Oct-28-2021</span>
@@ -64,9 +69,11 @@
               fugiat deleniti?
             </p>
           </div>
+          </router-link>
         </div>
         <div class="col">
-            <div class="content">
+            <router-link to="/articlePreview" class="router-link">
+          <div class="content">
             <img src="../../assets/dp.jpg" alt="" srcset="" class="blog-img" />
             <h1>The benefit of Communities</h1>
             <span><i class="fas fa-calendar-alt"></i>Oct-28-2021</span>
@@ -85,9 +92,11 @@
               fugiat deleniti?
             </p>
           </div>
+          </router-link>
         </div>
         <div class="col">
-            <div class="content">
+            <router-link to="/articlePreview" class="router-link">
+          <div class="content">
             <img src="../../assets/dp.jpg" alt="" srcset="" class="blog-img" />
             <h1>The benefit of Communities</h1>
             <span><i class="fas fa-calendar-alt"></i>Oct-28-2021</span>
@@ -106,9 +115,11 @@
               fugiat deleniti?
             </p>
           </div>
+          </router-link>
         </div>
         <div class="col">
-            <div class="content">
+            <router-link to="/articlePreview" class="router-link">
+          <div class="content">
             <img src="../../assets/dp.jpg" alt="" srcset="" class="blog-img" />
             <h1>The benefit of Communities</h1>
             <span><i class="fas fa-calendar-alt"></i>Oct-28-2021</span>
@@ -127,6 +138,7 @@
               fugiat deleniti?
             </p>
           </div>
+          </router-link>
         </div>
       </div>
       <div class="btn">
@@ -216,5 +228,10 @@ h1{
 .fa-chevron-circle-down{
     padding-left: 5px;
     margin-top: 5px;
+}
+.router-link {
+  text-decoration: none;
+  list-style-type: none;
+  color: gray;
 }
 </style>

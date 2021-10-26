@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Projects from '../components/pages/projects.vue'
+import articlePreview from '../components/blog/articlePreview.vue'
 
 Vue.use(VueRouter)
 
@@ -23,7 +24,8 @@ const routes = [
     path: '/projects',
     name: 'Projects',
     component: Projects
-  }
+  },
+  { path: '/articlePreview', name: 'articlePreview', component: articlePreview }
 ]
 
 const router = new VueRouter({
