@@ -162,11 +162,10 @@ export default {}
   max-width: 344px;
   cursor: pointer;
   padding: 5px;
-  background-color: red;
+  /* background-color: red; */
 }
 .blog-img {
   width: 330px;
-  /* height: 45vh; */
   background-size: cover;
   border: 1px solid gray;
   border-radius: 1em;
@@ -196,13 +195,9 @@ p{
 }
 }
 @media only screen and (max-width: 766px) {
-/* .blog-img {
-  width: 55vw;
-  height: 30vh;
-}
 h1{
-    font-size: 5vw;
-} */
+    font-size: 7vw;
+}
 }
 .btn{
     display: flex;
