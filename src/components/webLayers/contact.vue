@@ -34,7 +34,7 @@
             ></textarea>
             <br />
             <VueButtonSpinner type="submit" value="send" :isLoading="isLoading" :status="status" v-bind:disabled="!message  || !name || !email">
-            Send Mail
+            Send Mail &nbsp;<i class="fas fa-paper-plane"></i>
             </VueButtonSpinner>
           </form>
         </div>
