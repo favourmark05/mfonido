@@ -19,6 +19,7 @@ import blog from '@/components/webLayers/blog.vue'
 import Contact from './webLayers/contact.vue'
 import footerSection from './webLayers/footerSection.vue'
 export default {
+  name: 'HomePage',
   components: {
     hero,
     aboutMe,

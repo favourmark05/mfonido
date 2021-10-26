@@ -12,6 +12,7 @@ import blogNav from '@/components/blog/blogNav.vue'
 import blogContent from '@/components/blog/blogContent.vue'
 import blogFooter from '@/components/blog/blogFooter.vue'
 export default {
+  name: 'Blog',
   components: {
     blogNav,
     blogContent,

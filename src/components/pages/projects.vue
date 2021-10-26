@@ -1,14 +1,34 @@
 <template>
   <div>
     <div class="wrapper">
-      <div class="container">
-        <ul>
-          <li>ALL</li>
-          <li>WEBSITES</li>
-          <li>WEBAPPS</li>
-        </ul>
-      </div>
       <div class="container cards">
+        <div class="card">
+          <div class="project-container">
+            <div class="content1"></div>
+            <div class="content">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, at!</p>
+              <a href="#" target="_blank">Visit</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="project-container">
+            <div class="content1"></div>
+            <div class="content">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, at!</p>
+              <a href="#" target="_blank">Visit</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="project-container">
+            <div class="content1"></div>
+            <div class="content">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, at!</p>
+              <a href="#" target="_blank">Visit</a>
+            </div>
+          </div>
+        </div>
         <div class="card">
           <div class="project-container">
             <div class="content1"></div>
@@ -43,18 +63,12 @@
 
 <script>
 export default {
+  name: 'Projects'
 
 }
 </script>
 
 <style scoped>
-.wrapper{
-  display: grid;
-  grid-template-columns: 10% 90%;
-  background-color: red;
-  height: 100%;
-  padding: 5px;
-}
 .cards {
   max-width: 1200px;
   margin: 0 auto;
@@ -62,7 +76,6 @@ export default {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: auto auto auto;
-  /* grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); */
 }
 .card {
   background-color: white;
@@ -82,7 +95,7 @@ export default {
       rgba(206, 79, 79, 0.918)
     ), url('../../assets/dp.jpg');
   background-size: cover;
-  height: 35vh;
+  height: 210px;
   background-blend-mode: screen;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
