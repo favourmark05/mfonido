@@ -159,13 +159,14 @@ export default {}
   padding: 30px;
 }
 .content {
-  max-width: 35vw;
+  max-width: 344px;
   cursor: pointer;
   padding: 5px;
+  background-color: red;
 }
 .blog-img {
-  width: 30vw;
-  height: 45vh;
+  width: 330px;
+  /* height: 45vh; */
   background-size: cover;
   border: 1px solid gray;
   border-radius: 1em;
@@ -194,14 +195,14 @@ p{
     grid-template-columns: auto;
 }
 }
-@media only screen and (max-width: 605px) {
-.blog-img {
+@media only screen and (max-width: 766px) {
+/* .blog-img {
   width: 55vw;
   height: 30vh;
 }
 h1{
     font-size: 5vw;
-}
+} */
 }
 .btn{
     display: flex;
