@@ -88,8 +88,8 @@ export default {
   box-shadow: 0 7px 5px rgba(58, 55, 55, 0.589), 0 3px 5px rgba(58, 55, 55, 0.589);
 }
 .cv:hover{
-  background-color: black;
-  color: red;
+  background-color: rgb(124, 119, 119);
+  color: white;
   border: 2px solid white;
 }
 @keyframes moveInLeft {

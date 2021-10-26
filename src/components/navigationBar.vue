@@ -112,7 +112,7 @@ main {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgb(77, 58, 58, 0.8);
+  background: rgba(189, 61, 61, 0.897);
   height: 100vh;
   width: 0;
   display: flex;

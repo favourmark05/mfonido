@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="wrapper">
+      <h1>All My Projects</h1>
       <div class="container cards">
         <div class="card">
           <div class="project-container">
@@ -58,12 +59,17 @@
         </div>
       </div>
     </div>
+    <footerSection/>
   </div>
 </template>
 
 <script>
+import footerSection from '../webLayers/footerSection.vue'
 export default {
-  name: 'Projects'
+  name: 'Projects',
+  components: {
+    footerSection
+  }
 
 }
 </script>
@@ -128,5 +134,8 @@ export default {
     display: grid;
     grid-template-columns: auto;
   }
+}
+h1{
+  text-align: center;
 }
 </style>
