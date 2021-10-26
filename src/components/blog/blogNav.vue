@@ -67,6 +67,7 @@ export default {}
   display: flex;
   justify-content: space-between;
   background-color: black;
+  border-bottom: .5px solid gray;
 }
 .container2 {
   padding: 5px 30px;

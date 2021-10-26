@@ -1,169 +1,192 @@
 <template>
   <div>
-    <div class="navigation">
-      <input type="checkbox" class="navigation-checkbox" id="navi-toggle" />
-      <label for="navi-toggle" class="navigation-button">
-        <span class="navigation-icon"></span>
-      </label>
-      <div class="navigation-bg" :class="[ isLoading ? 'navigation-checkbox:checked ~ navigation-bg' : 'navigation-checkbox:checked ~ navigation-nav']"></div>
-      <nav class="navigation-nav">
-        <ul class="nav-list">
-          <li class="nav-item" @click="closeBtn()" >
-            <router-link to="/" class="nav-link"
-              ><span >01</span>Home</router-link
-            >
-          </li>
-          <li class="nav-item" @click="closeBtn()" >
-            <router-link to="/projects" class="nav-link"
-              ><span>02</span>Projects</router-link
-            >
-          </li>
-          <li class="nav-item" @click="closeBtn()" >
-            <router-link to="/blog" class="nav-link"
-              ><span>03</span>Blog Post</router-link
-            >
-          </li>
-        </ul>
-      </nav>
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler" />
+      <div class="hamburger"><div></div></div>
+      <div class="menu">
+        <div>
+          <ul>
+            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/projects">Projects</router-link></li>
+            <li><router-link to="/blog">Blog</router-link></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      isLoading: true
-    }
-  },
-  methods: {
-    closeBtn () {
-      this.isLoading = !this.isLoading
-    }
-  }
+
 }
 </script>
 
 <style scoped>
-.navigation-bg {
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  background-image: radial-gradient(rgb(189, 61, 61), rgb(206, 79, 79));
-  z-index: 1000;
-  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.navigation-checkbox {
-  display: none;
+:root {
+  --menu-speed: 0.75s;
 }
-.navigation-button {
-  background-color: white;
-  height: 3rem;
-  width: 3rem;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  border-radius: 50%;
-  z-index: 2000;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.692);
-  cursor: pointer;
+body {
+  font-family: "Roboto";
+  line-height: 1.4;
+  background: url("https://source.unsplash.com/WoZgy7ZwgBI/1920x1080") no-repeat center center/cover;
+   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+main {
+  margin: 150px auto;
+  max-width: 728px;
+  padding: 2rem;
+  background-color: #fafafa;
+  border-radius: 3px;
   text-align: center;
 }
-.navigation-nav {
-  height: 100vh;
+.menu-wrap {
   position: fixed;
   top: 0;
-  right: 0;
-  z-index: 1500;
-  opacity: 0;
-  width: 0;
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  left: 0;
+  z-index: 1;
 }
-.nav-list {
+.menu-wrap .toggler {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  list-style-type: none;
-  text-align: center;
-  text-decoration: none;
+  top: 0;
+  left: 90vw;
+  opacity: 0;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  z-index: 2;
 }
-.nav-item {
-  margin: 1rem;
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 88vw;
+  height: 60px;
+  width: 60px;
+  background: transparent;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
-.nav-link {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  font-size: 2rem;
-  font-weight: 300;
-  list-style-type: none;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  background-image: linear-gradient(
-    120deg,
-    transparent 0%,
-    transparent 50%,
-    white 50%
-  );
-  background-size: 240%;
-  transition: all 0.4s;
-}
-span {
-  display: inline-block;
-  margin-right: 1rem;
-}
-.nav-link:hover,
-.nav-link:active {
-  background-position: 100%;
-  color: rgb(206, 79, 79);
-  font-weight: bolder;
-  transform: translateX(1rem);
-}
-.navigation-checkbox:checked ~ .navigation-bg {
-  transform: scale(100);
-}
-.navigation-checkbox:checked ~ .navigation-nav {
-  opacity: 1;
-  width: 100%;
-}
-.navigation-icon {
+
+/* Hamburger line */
+.menu-wrap .hamburger > div {
   position: relative;
-  margin-top: 1.5rem;
-  margin-left: 0.5rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: red;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
 }
-.navigation-icon,
-.navigation-icon::before,
-.navigation-icon::after {
-  width: 2rem;
-  height: 0.5px;
-  background-color: #000000;
-  display: inline-block;
-}
-.navigation-icon::before,
-.navigation-icon::after {
+
+/* Hamburger top & bottom line */
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
   content: "";
   position: absolute;
+  top: 10px;
   left: 0;
+  background: inherit;
+  height: 2px;
+  width: 100%;
+  z-index: 1;
 }
-.navigation-icon::before {
-  top: -0.5rem;
+.menu-wrap .hamburger > div:after {
+  top: -10px;
 }
-.navigation-icon::after {
-  top: 0.5rem;
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
 }
-.navigation-checkbox:checked + .navigation-button .navigation-icon {
-  background-color: transparent;
-}
-.navigation-checkbox:checked + .navigation-button .navigation-icon::before {
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
   top: 0;
-  transform: rotate(45deg);
+  transform: rotate(90deg);
 }
-.navigation-checkbox:checked + .navigation-button .navigation-icon::after {
+
+/* Rotate on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+.menu {
+  position: fixed;
   top: 0;
-  transform: rotate(-45deg);
+  left: 0;
+  background: rgb(77, 58, 58, 0.8);
+  height: 100vh;
+  width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: all var(--menu-speed) ease;
+}
+.menu > div {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+.menu ul {
+  list-style: none;
+}
+.menu li {
+  padding: 1rem 0;
+}
+.menu > div a {
+  text-decoration: none;
+  color: #fafafa;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+.menu a:hover {
+  color: rgb(230, 177, 177);
+  transition: color 0.3s ease-in;
+}
+
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+  opacity: 1;
+  width: 30vw;
+  transition: all var(--menu-speed) ease;
+}
+.menu-wrap .toggler:checked ~ .menu > div {
+  opacity: 1;
+  transition: opacity 0.4s ease-in;
+}
+.menu-wrap .toggler:checked ~ .menu > div a {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+@media (max-width: 500px) {
+  .menu-wrap .toggler:checked ~ .menu {
+    width: 65vw;
+  }
 }
 </style>

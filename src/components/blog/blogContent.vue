@@ -159,18 +159,20 @@ export default {}
   padding: 30px;
 }
 .content {
-  max-width: 400px;
+  max-width: 35vw;
   cursor: pointer;
+  padding: 5px;
 }
 .blog-img {
-  width: 400px;
-  height: 300px;
+  width: 30vw;
+  height: 45vh;
   background-size: cover;
   border: 1px solid gray;
   border-radius: 1em;
 }
 h1 {
   color: white;
+  font-size: 2vw;
 }
 span {
   margin-right: 50px;
@@ -190,6 +192,15 @@ p{
 @media only screen and (max-width: 900px) {
 .row{
     grid-template-columns: auto;
+}
+}
+@media only screen and (max-width: 605px) {
+.blog-img {
+  width: 55vw;
+  height: 30vh;
+}
+h1{
+    font-size: 5vw;
 }
 }
 .btn{
