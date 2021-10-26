@@ -23,22 +23,6 @@ export default {
 </script>
 
 <style scoped>
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-:root {
-  --menu-speed: 0.75s;
-}
-body {
-  font-family: "Roboto";
-  line-height: 1.4;
-  background: url("https://source.unsplash.com/WoZgy7ZwgBI/1920x1080") no-repeat center center/cover;
-   height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
 main {
   margin: 150px auto;
   max-width: 728px;
@@ -55,7 +39,7 @@ main {
 }
 .menu-wrap .toggler {
   position: absolute;
-  top: 0;
+  top: 3vh;
   left: 90vw;
   opacity: 0;
   height: 50px;
@@ -65,17 +49,18 @@ main {
 }
 .menu-wrap .hamburger {
   position: absolute;
-  top: 0;
-  left: 88vw;
-  height: 60px;
-  width: 60px;
-  background: transparent;
+  top: 3vh;
+  left: 90vw;
+  height: 50px;
+  width: 50px;
+  background: rgba(22, 22, 22, 0.247);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 1;
+  border-radius: 100%;
 }
 
 /* Hamburger line */
@@ -85,7 +70,7 @@ main {
   left: 0;
   width: 100%;
   height: 2px;
-  background: red;
+  background-color: red;
   flex: none;
   display: flex;
   align-items: center;
@@ -188,5 +173,31 @@ main {
   .menu-wrap .toggler:checked ~ .menu {
     width: 65vw;
   }
+}
+@media only screen and (max-with: 428px) {
+  .menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 80vw;
+  opacity: 0;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  z-index: 2;
+}
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 80vw;
+  height: 60px;
+  width: 60px;
+  background: transparent;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
 }
 </style>

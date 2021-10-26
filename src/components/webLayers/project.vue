@@ -63,6 +63,7 @@ export default {}
   background-color: white;
   padding: 1rem;
   height: auto;
+  width: auto;
   text-align: center;
   border-radius: 1em;
   box-shadow: 0 1.5rem 8rem rgba(0, 0, 0, 0.9);
@@ -129,5 +130,11 @@ h1{
 }
 .content > a:hover{
   background-color: rgb(207, 40, 40);
+}
+@media only screen and (max-width: 438px){
+  .card{
+    /* max-width: 1300px; */
+    /* width: 192px; */
+  }
 }
 </style>

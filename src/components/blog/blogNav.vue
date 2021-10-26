@@ -70,18 +70,18 @@ export default {}
   border-bottom: .5px solid gray;
 }
 .container2 {
-  padding: 5px 30px;
+  padding: 5px 10px;
   background-color: rgb(29, 27, 27);
   border-bottom: 3px solid rgb(102, 97, 97);
 }
 .row {
   display: grid;
   grid-template-columns: auto auto;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .col-header {
-  padding: 5px;
+  /* padding: px; */
 }
 .blog-img-head {
   border-radius: 100%;
@@ -119,7 +119,11 @@ li {
   padding: 10px;
 }
 .functions {
-  padding-top: 30px;
+  padding-top: 53px;
+}
+p {
+  color: gray;
+  width: 55vw;
 }
 @media only screen and (max-width: 766px) {
   .row > .col-header2 {
@@ -129,14 +133,14 @@ li {
   .row {
     grid-template-columns: auto;
   }
+  p{
+    width: 85vw;
+  }
 }
 h1 {
   color: white;
 }
 span {
   color: rgb(206, 79, 79);
-}
-p {
-  color: gray;
 }
 </style>

@@ -215,7 +215,7 @@ h1{
     border-radius: .5em;
 }
 .btn-more-list:hover{
-    color: white;
+    /* color: white; */
 }
 .fa-chevron-circle-down{
     padding-left: 5px;
