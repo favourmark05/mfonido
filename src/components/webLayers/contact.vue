@@ -38,9 +38,15 @@
             </VueButtonSpinner>
           </form>
         </div>
-        <div class="col-2">
-        </div>
+        <!-- <div class="col-2">
+        </div> -->
       </div>
+      <div class="socials">
+          <a href="https://twitter.com/MfonidoMark" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://github.com/favourmark05" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/mfonido-mark-4baa42120/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:favourmark05@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
     </section>
   </div>
 </template>
@@ -142,7 +148,7 @@ export default {
     rgba(206, 79, 79, 0.664)
   );
   height: 100%;
-  display: flex;
+  /* display: flex; */
   padding: 20px;
 }
 .form {
@@ -220,5 +226,15 @@ form > span {
   .col-1 {
     border-radius: 1em;
   }
+}
+.socials{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 20px;
+}
+.fas, .fab {
+  font-size: 20px;
+  color: white;
 }
 </style>
