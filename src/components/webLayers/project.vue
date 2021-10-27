@@ -7,28 +7,37 @@
       <div class="cards">
         <div class="card">
           <div class="project-container">
-            <div class="content1"></div>
+            <div class="content1">
+              <img src="../../assets/projects/weather.png" alt="" srcset="" class="img-card">
+            </div>
             <div class="content">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, at!</p>
-              <a href="#" target="_blank">Visit</a>
+              <h3>WEATHER APP</h3>
+              <p>A WEATHER APP</p>
+              <a href="https://raffiaweatherapp.netlify.app/" target="_blank">Visit</a>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="project-container">
-            <div class="content1"></div>
+            <div class="content1">
+              <img src="../../assets/projects/netflix.png" alt="" srcset="" class="img-card">
+            </div>
             <div class="content">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, at!</p>
-              <a href="#" target="_blank">Visit</a>
+              <h3>NETFLIX CLONE</h3>
+              <p>A Netflix Nigeria Clone</p>
+              <a href="https://mfonido-netflixclone.netlify.app/" target="_blank">Visit</a>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="project-container">
-            <div class="content1"></div>
+            <div class="content1">
+              <img src="../../assets/projects/oriona.png" alt="" srcset="" class="img-card">
+            </div>
             <div class="content">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos, at!</p>
-              <a href="#" target="_blank">Visit</a>
+              <h3>ART GALLERY</h3>
+              <p>An online Art GALLERY (Eccomerce)</p>
+              <a href="https://orionaart.com/" target="_blank">Visit</a>
             </div>
           </div>
         </div>
@@ -47,6 +56,13 @@ export default {}
 </script>
 
 <style scoped>
+h3{
+  color: rgba(206, 79, 79, 0.918);
+}
+.img-card{
+  width: 100%;
+  height: 50%;
+}
 .projects{
   margin-top: 6rem;
    margin-bottom: 6rem;
@@ -107,7 +123,7 @@ h1{
       to bottom right,
       rgba(90, 102, 45, 0.87),
       rgba(206, 79, 79, 0.918)
-    ), url('../../assets/dp.jpg');
+    );
   background-size: cover;
   height: 35vh;
   background-blend-mode: screen;
