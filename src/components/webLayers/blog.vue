@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="more-link">
-        <router-link to="/blogPage" class="more">View More</router-link>
+        <router-link to="/blog" class="more">View More</router-link>
       </div>
     </div>
   </div>
