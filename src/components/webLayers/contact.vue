@@ -114,7 +114,6 @@ export default {
 .heading {
   font-size: 1rem;
   font-weight: 700;
-  /* color: white; */
   background-image: linear-gradient(
     to right,
     rgba(224, 17, 17, 0.575),
@@ -148,7 +147,6 @@ export default {
     rgba(206, 79, 79, 0.664)
   );
   height: 100%;
-  /* display: flex; */
   padding: 20px;
 }
 .form {
@@ -232,7 +230,6 @@ form > span {
   justify-content: space-around;
   text-align: center;
   padding-top: 20px;
-  /* color: white; */
 }
 .icon{
   font-size: 20px;
