@@ -3,6 +3,13 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Projects from '../components/pages/projects.vue'
 import articlePreview from '../components/blog/articlePreview.vue'
+import signUp from '../components/Admin/Authenticate/signUp.vue'
+import login from '../components/Admin/Authenticate/login.vue'
+import createArticles from '../components/Admin/Dashboard/createArticles.vue'
+import crudArticles from '../components/Admin/Dashboard/crudArticles.vue'
+import createProjects from '../components/Admin/Dashboard/createProjects.vue'
+import crudProjects from '../components/Admin/Dashboard/crudProjects.vue'
+import Admin from '../views/Admin.vue'
 
 Vue.use(VueRouter)
 
@@ -19,6 +26,44 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Blog.vue')
+  },
+  {
+    path: '/signUp',
+    name: 'signUp',
+    component: signUp
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: login
+  },
+  {
+    path: '/Admin',
+    name: 'Admin',
+    component: Admin,
+    meta: { requiresAuth: true },
+    children: [
+      {
+        path: '/createArticles',
+        name: 'createArticles',
+        component: createArticles
+      },
+      {
+        path: '/crudArticles',
+        name: 'crudArticles',
+        component: crudArticles
+      },
+      {
+        path: '/createProjects',
+        name: 'createProjects',
+        component: createProjects
+      },
+      {
+        path: '/crudProjects',
+        name: 'crudProjects',
+        component: crudProjects
+      }
+    ]
   },
   {
     path: '/projects',
