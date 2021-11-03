@@ -3,10 +3,11 @@
     <div class="container">
       <div class="login">
         <h1>LOGIN</h1>
-        <form action="">
-          <input type="emial" placeholder="Email" /> <br />
-          <input type="password" placeholder="PassWord" /> <br />
-          <button>Login</button>
+        <form @submit.prevent="login">
+          <input type="emial" placeholder="Email" v-model="email" /> <br />
+          <input type="password" placeholder="PassWord" v-model="password" />
+          <br />
+          <button type="submit">Login</button>
         </form>
       </div>
     </div>
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 export default {
   name: 'Login',
   components: {},
@@ -24,6 +26,22 @@ export default {
     }
   },
   methods: {
+    login () {
+      const auth = getAuth()
+      signInWithEmailAndPassword(auth, this.email, this.password)
+        .then(() => {
+          // Signed in
+          console.log('signed in')
+          this.$router.replace('/admin')
+          // const user = userCredential.user
+          // ...
+        })
+        .catch(error => {
+          const errorCode = error.code
+          const errorMessage = error.message
+          console.log(errorCode, errorMessage)
+        })
+    }
   }
 }
 </script>

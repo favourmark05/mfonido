@@ -10,6 +10,7 @@ import crudArticles from '../components/Admin/Dashboard/crudArticles.vue'
 import createProjects from '../components/Admin/Dashboard/createProjects.vue'
 import crudProjects from '../components/Admin/Dashboard/crudProjects.vue'
 import Admin from '../views/Admin.vue'
+import firebase from 'firebase/compat'
 
 Vue.use(VueRouter)
 
@@ -39,7 +40,7 @@ const routes = [
   },
   {
     path: '/Admin',
-    name: 'Admin',
+    name: 'admin',
     component: Admin,
     meta: { requiresAuth: true },
     children: [
@@ -77,6 +78,15 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach(async (to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  if (requiresAuth && !await firebase.getCurrentUser()) {
+    next('/login')
+  } else {
+    next()
+  }
 })
 
 export default router

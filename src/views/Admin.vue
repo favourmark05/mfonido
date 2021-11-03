@@ -15,13 +15,14 @@
                   <hr>
                   <li><router-link to="/crudProjects" class="links">CRUD Projects</router-link></li>
                   <hr>
-                  <li><i class="fas fa-power-off"></i></li>
+                  <li @click="logout()"><i class="fas fa-power-off"></i></li>
                   <hr>
               </ul>
           </div>
           <div class="col content">
               <router-view/>
               <div class="overview" v-show="$route.name === 'Admin'">
+                  <h1>this is the overview page</h1>
                   <h1>this is the overview page</h1>
               </div>
           </div>
@@ -30,7 +31,25 @@
 </template>
 
 <script>
+import { getAuth, signOut } from 'firebase/auth'
 export default {
+  name: 'admin',
+  data () {
+    return {
+
+    }
+  },
+  methods: {
+    logout () {
+      const auth = getAuth()
+      signOut(auth).then(() => {
+        console.log('signed out')
+        this.$router.replace('/')
+      }).catch((err) => {
+        console.log(err)
+      })
+    }
+  }
 
 }
 </script>
@@ -43,6 +62,7 @@ export default {
 }
 .nav-list{
     border-right: 2px solid rgb(158, 37, 37);
+    /* position: fixed; */
 }
 li{
     text-decoration: none;
