@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <!-- <div class="container">
       <div class="login">
         <h1>SIGN UP</h1>
         <form @submit.prevent="register">
@@ -10,13 +10,12 @@
           <button type="submit">SignUp</button>
         </form>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
-// import { firebase } from 'firebase/compat/app'
 export default {
   name: 'signUp',
   data () {
@@ -32,7 +31,6 @@ export default {
         .then((userCredential) => {
           alert('Succefully registered! Please login')
           this.$router.push('/login')
-        // const user = userCredential.user
         })
         .catch((error) => {
           const errorCode = error.errorCode
