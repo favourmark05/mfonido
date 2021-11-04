@@ -27,6 +27,7 @@ export default {
 .footer-logo{
     width: 200px;
     text-align: center;
+    margin-left: 150px;
 }
 p{
     /* padding-left: 25px; */

@@ -14,13 +14,12 @@
           <div class="project-container">
             <div class="content1"></div>
             <div class="content">
-              <h3>ARTICLE TITLE</h3>
+              <h3>INCLUSIVE COMMUNITY</h3>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos,
-                at!
+                There is a need for building communities, be it for any
               </p>
-              <span class="date">28, October 2021</span> <br />
-              <a href="#" target="_blank">Visit</a>
+              <span class="date">10, July 2020</span> <br />
+              <a href="https://dev.to/favourmark05/inclusive-community-1l4g" target="_blank">Visit</a>
             </div>
           </div>
         </div>
@@ -28,13 +27,12 @@
           <div class="project-container">
             <div class="content1"></div>
             <div class="content">
-              <h3>ARTICLE TITLE</h3>
+              <h3>Objectives and Key Result</h3>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos,
-                at!
+                In business, OKRs are used to guide outcome-based success.
               </p>
-              <span class="date">28, October 2021</span> <br />
-              <a href="#" target="_blank">Visit</a>
+              <span class="date">31, July 2020</span> <br />
+              <a href="https://dev.to/favourmark05/objectives-and-key-results-1j3i" target="_blank">Visit</a>
             </div>
           </div>
         </div>
@@ -42,13 +40,12 @@
           <div class="project-container">
             <div class="content1"></div>
             <div class="content">
-              <h3>ARTICLE TITLE</h3>
+              <h3>First MeetUp</h3>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos,
-                at!
+                Having the first meetup is crucial to any community
               </p>
-              <span class="date">28, October 2021</span> <br />
-              <a href="#" target="_blank">Visit</a>
+              <span class="date">19, December 2020</span> <br />
+              <a href="https://dev.to/favourmark05/having-your-first-meetup-53n8" target="_blank">Visit</a>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@
           <a
             href="https://dev.to/favourmark05/inclusive-community-1l4g"
             class="router-link"
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
           >
             <div class="content">
               <img
@@ -32,7 +32,7 @@
           <a
             href="https://dev.to/favourmark05/having-your-first-meetup-53n8"
             class="router-link"
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
           >
             <div class="content">
               <img
@@ -54,34 +54,64 @@
           </a>
         </div>
         <div class="col">
-          <router-link to="/articlePreview" class="router-link">
+          <a
+            href="https://dev.to/favourmark05/objectives-and-key-results-1j3i"
+            class="router-link"
+            target="_blank" rel="noopener noreferrer"
+          >
             <div class="content">
               <img
-                src="../../assets/dp.jpg"
+                src="../../assets/blogImg/okr.png"
                 alt=""
                 srcset=""
                 class="blog-img"
               />
-              <h1>The benefit of Communities</h1>
-              <span><i class="fas fa-calendar-alt"></i>Oct-28-2021</span>
-              <span><i class="far fa-clock"></i>5mins Read</span>
+              <h1>Objectives and Key Result</h1>
+              <span><i class="fas fa-calendar-alt"></i>Jul-31-2020</span>
+              <span><i class="far fa-clock"></i>6mins Read</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Reiciendis atque perferendis nisi ad dolorem neque minus rem
-                consequatur facilis ipsam, necessitatibus obcaecati voluptate
-                error nihil illum asperiores dolorum maxime laboriosam dolor cum
-                totam. Repudiandae voluptatibus reprehenderit aspernatur placeat
-                laudantium dolore. Delectus modi consequuntur dolorum, amet
-                accusantium culpa ipsa minima ut harum hic explicabo
-                perspiciatis ex sit assumenda odio cupiditate. Saepe numquam
-                quaerat laudantium iste voluptatem, quod sunt nesciunt deserunt
-                itaque quas repudiandae. Numquam eveniet corrupti suscipit ea
-                perferendis fugiat deleniti?
+                In business, OKRs are used to guide outcome-based success. Using
+                outcomes instead of tasks as a driver, OKRs encourage
+                accountability in every step of achieving success through metric
+                indicators. OKRs are driven by values-based outcomes. So for the
+                sake of our settings we shall be looking at OKR’s in the tech
+                ecosystem(community). We shall try as much as possible to
+                simplify it to its barest minimum.
               </p>
             </div>
-          </router-link>
+          </a>
         </div>
         <div class="col">
+          <a
+            href="https://dev.to/favourmark05/vs-code-terminal-issues-on-kali-linux-48f8"
+            class="router-link"
+            target="_blank" rel="noopener noreferrer"
+          >
+            <div class="content">
+              <img
+                src="../../assets/blogImg/terminal.png"
+                alt=""
+                srcset=""
+                class="blog-img"
+              />
+              <h1>VSCODE TERMNAL ISSUE ON KALI</h1>
+              <span><i class="fas fa-calendar-alt"></i>May-22-2020</span>
+              <span><i class="far fa-clock"></i>2mins Read</span>
+              <p>
+                couple of months ago i recently installed kali linux on my
+                personal pc, because i wanted to get familiar with the unix
+                environment, it was a nice experience, so after using it for
+                some time, i heard about the fish command line shell, i
+                installed it on my pc. Fish is a smart and user-friendly command
+                line shell for macOS, Linux, and the rest of the family. fish
+                includes features like syntax highlighting,
+                autosuggest-as-you-type, and fancy tab completions that just
+                work, with no configuration required
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- <div class="col">
           <router-link to="/articlePreview" class="router-link">
             <div class="content">
               <img
@@ -108,8 +138,8 @@
               </p>
             </div>
           </router-link>
-        </div>
-        <div class="col">
+        </div> -->
+        <!-- <div class="col">
           <router-link to="/articlePreview" class="router-link">
             <div class="content">
               <img
@@ -136,47 +166,20 @@
               </p>
             </div>
           </router-link>
-        </div>
-        <div class="col">
-          <router-link to="/articlePreview" class="router-link">
-            <div class="content">
-              <img
-                src="../../assets/dp.jpg"
-                alt=""
-                srcset=""
-                class="blog-img"
-              />
-              <h1>The benefit of Communities</h1>
-              <span><i class="fas fa-calendar-alt"></i>Oct-28-2021</span>
-              <span><i class="far fa-clock"></i>5mins Read</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Reiciendis atque perferendis nisi ad dolorem neque minus rem
-                consequatur facilis ipsam, necessitatibus obcaecati voluptate
-                error nihil illum asperiores dolorum maxime laboriosam dolor cum
-                totam. Repudiandae voluptatibus reprehenderit aspernatur placeat
-                laudantium dolore. Delectus modi consequuntur dolorum, amet
-                accusantium culpa ipsa minima ut harum hic explicabo
-                perspiciatis ex sit assumenda odio cupiditate. Saepe numquam
-                quaerat laudantium iste voluptatem, quod sunt nesciunt deserunt
-                itaque quas repudiandae. Numquam eveniet corrupti suscipit ea
-                perferendis fugiat deleniti?
-              </p>
-            </div>
-          </router-link>
-        </div>
+        </div> -->
       </div>
+      <a href="https://dev.to/favourmark05" target="_blank" rel="noopener noreferrer">
       <div class="btn">
         <button class="btn-more-list">
           View More<i class="fas fa-chevron-circle-down"></i>
         </button>
       </div>
+      </a>
     </div>
   </div>
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style scoped>
 .container {
@@ -261,5 +264,8 @@ p {
   text-decoration: none;
   list-style-type: none;
   color: gray;
+}
+a {
+  text-decoration: none;
 }
 </style>
