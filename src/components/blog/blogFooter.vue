@@ -2,7 +2,7 @@
   <div>
       <footer class="footer">
           <div class="foot">
-              <p>&copy; Mfonido Mark's Blog</p>
+              <p> Mfonido Mark's Blog &copy; {{ new Date().getFullYear() }} made with Vuejs - firebase and Netlify</p>
               <img src="../../assets/logo1.png" alt="" srcset="" class="footer-logo">
           </div>
       </footer>
@@ -26,8 +26,9 @@ export default {
 }
 .footer-logo{
     width: 200px;
+    text-align: center;
 }
 p{
-    padding-left: 25px;
+    /* padding-left: 25px; */
 }
 </style>

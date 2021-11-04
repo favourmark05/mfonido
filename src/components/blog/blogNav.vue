@@ -37,7 +37,7 @@
               several years of experience in frontend web development and graphics design.
               Volunteering and building tech communities have been a passion for
               me and I have led a few myself. Hire me to build your website,
-              design your graphic works and train you on public speaking.
+              design your graphic works and speak at your Tech Event.
             </p>
           </div>
           <div class="col-header col-header2">

@@ -32,7 +32,7 @@ export default {
         .then(() => {
           // Signed in
           console.log('signed in')
-          this.$router.replace('/admin')
+          this.$router.replace('/Admin')
           // const user = userCredential.user
           // ...
         })

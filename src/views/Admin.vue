@@ -20,11 +20,12 @@
               </ul>
           </div>
           <div class="col content">
-              <router-view/>
-              <div class="overview" v-show="$route.name === 'Admin'">
+              <div class="overview"  v-show="$route.name === '/Admin'">
                   <h1>this is the overview page</h1>
                   <h1>this is the overview page</h1>
+                  heloo
               </div>
+              <router-view/>
           </div>
       </div>
   </div>
@@ -87,5 +88,8 @@ li:hover{
     text-decoration: none;
     list-style-type: none;
     color: white;
+}
+h1{
+    color: black;
 }
 </style>

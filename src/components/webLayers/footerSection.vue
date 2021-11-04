@@ -1,7 +1,7 @@
 <template>
   <div>
       <footer class="footer">
-          <h4>@MfonidoMark</h4>
+          <h4>MfonidoMark &copy; {{ new Date().getFullYear() }} made with Vuejs - firebase and Netlify</h4>
           <img src="../../assets/logo1.png" alt="" srcset="" class="footer-logo">
       </footer>
   </div>
