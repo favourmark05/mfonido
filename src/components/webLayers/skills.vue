@@ -3,7 +3,7 @@
     <div class="skills">
       <div class="skill-head">
         <h1 class="heading">
-          SKILL SET
+          SKILL SETS
         </h1>
       </div>
       <div class="cards">
