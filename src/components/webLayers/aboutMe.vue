@@ -20,10 +20,10 @@
             <h3>Leadership and Community Engagement</h3>
             <p>
               Building and getting involved with Tech communities and other
-              communities has been a passion for me, i have been involved with a
+              communities has been a passion for me, I have been involved with a
               few and also lead some my self, like GDSC(Google Developer student
               club(Ex-Lead)), Ingressive for Good(Ex-lead Ambassador), Open source
-              community Africa (Ikot-Ekpene Chapter lead), and i also volunteer for the Nigerian Red Cross Society.
+              community Africa (Ikot-Ekpene Chapter lead), and I also volunteer for the Nigerian Red Cross Society.
             </p>
           </div>
           <div class="col-1">
