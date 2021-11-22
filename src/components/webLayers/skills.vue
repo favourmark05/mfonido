@@ -25,6 +25,7 @@
           <hr />
           <p>C#</p>
           <hr />
+          <p>Java</p>
         </div>
         <div class="card">
           <h3>FRAME WORKS</h3>
@@ -35,6 +36,8 @@
           <p>REACT</p>
           <hr />
           <p>NODEJS</p>
+          <hr/>
+          <p>Spring Boot</p>
         </div>
         <div class="card">
           <h3>TOOLS / LIBRARIES</h3>
