@@ -23,7 +23,7 @@
               communities has been a passion for me, I have been involved with a
               few and also lead some my self, like GDSC(Google Developer student
               club(Ex-Lead)), Ingressive for Good(Ex-lead Ambassador), Open source
-              community Africa (Ikot-Ekpene Chapter lead),Google Developers Group(Ikot-Ekpene Chapter Organizer) and I also volunteer for the Nigerian Red Cross Society.
+              community Africa (Ikot-Ekpene Chapter lead), Google Developers Group (Ikot-Ekpene Chapter Organizer) and I also volunteer for the Nigerian Red Cross Society.
             </p>
           </div>
           <div class="col-1">
