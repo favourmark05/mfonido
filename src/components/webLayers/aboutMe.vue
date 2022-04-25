@@ -11,11 +11,9 @@
           <div class="col-1">
             <h3>Meet me</h3>
             <p>
-              Hello, i'm Mfonido Mark. I design thoughtful digital experiences &
-              beautiful brand aesthetics. I provide high Quality web designs,
-              graphics services,for Businesses and Personal Brands. Hire me to
-              build you a website,design your graphic works teach you to code or
-              speak at your event.
+              I am a Mid-Level Front-End Engineer, with a focus on Building the frontend product on the web with Vuejs, and Nuxtjs, making it accessible, fast, Responsive and User friendly as possible.
+              I have over 3years of Industry experience building the frontend part of web Applications / Products.
+I             am very passionate about the web and I strive to make products and applications I build on them as accessible as possible.
             </p>
             <h3>Leadership and Community Engagement</h3>
             <p>
@@ -56,6 +54,9 @@ export default {}
 </script>
 
 <style scoped>
+p{
+  text-align: justify;
+}
 .section-about {
   background-color: #f7f7f7;
   padding-left: 0;
