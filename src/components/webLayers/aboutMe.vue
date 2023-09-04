@@ -12,7 +12,7 @@
             <h3>Meet me</h3>
             <p>
               I am a Mid-Level Front-End Engineer, with a focus on Building the frontend product on the web with Vuejs, and Nuxtjs, making it accessible, fast, Responsive and User friendly as possible.
-              I have over 3years of Industry experience building the frontend part of web Applications / Products.
+              I have over 6years of Industry experience building the frontend part of web Applications / Products.
 I             am very passionate about the web and I strive to make products and applications I build on them as accessible as possible.
             </p>
             <h3>Leadership and Community Engagement</h3>
