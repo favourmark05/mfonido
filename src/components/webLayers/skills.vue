@@ -33,6 +33,8 @@
           <hr />
           <p>NUXTJS</p>
           <hr />
+          <p>ANGULAR</p>
+          <hr />
           <p>REACT</p>
           <hr />
           <p>NODEJS</p>
