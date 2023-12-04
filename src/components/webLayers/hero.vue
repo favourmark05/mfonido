@@ -8,7 +8,7 @@
         <span class="title-head">Mfonido Mark</span>
         <span class="title-head-sub">Front-End Web Developer</span>
       </h1>
-      <a href="https://docs.google.com/document/d/1h3csuqWnbbMAzB0B20fwIy5V9Mh72QbUr6fiKBw8phM/edit?usp=sharing" download class="cv" target="_blank">DOWNLOAD RESUME</a>
+      <a href="https://docs.google.com/document/d/1tHvzKB1U3J8tuORq6XSfcCumqTrN7v22RBjFAc5GAQQ/edit?usp=sharing" download class="cv" target="_blank">DOWNLOAD RESUME</a>
     </div>
   </header>
 </template>
@@ -17,10 +17,8 @@
 export default {
   methods: {
     download () {
-      const url = 'https://docs.google.com/document/d/1h3csuqWnbbMAzB0B20fwIy5V9Mh72QbUr6fiKBw8phM/edit?usp=sharing'
+      const url = 'https://docs.google.com/document/d/1tHvzKB1U3J8tuORq6XSfcCumqTrN7v22RBjFAc5GAQQ/edit?usp=sharing'
       window.location.href = url
-      // EventTarget.blank
-      // download
     }
   }
 }

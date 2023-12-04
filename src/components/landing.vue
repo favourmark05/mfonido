@@ -3,7 +3,7 @@
 <hero/>
 <aboutMe/>
 <skills/>
-<project/>
+<!-- <project/> -->
 <blog/>
 <contact/>
 <footerSection/>
@@ -14,7 +14,7 @@
 import hero from '@/components/webLayers/hero.vue'
 import aboutMe from '@/components/webLayers/aboutMe.vue'
 import skills from '@/components/webLayers/skills.vue'
-import project from '@/components/webLayers/project.vue'
+// import project from '@/components/webLayers/project.vue'
 import blog from '@/components/webLayers/blog.vue'
 import Contact from './webLayers/contact.vue'
 import footerSection from './webLayers/footerSection.vue'
@@ -24,7 +24,7 @@ export default {
     hero,
     aboutMe,
     skills,
-    project,
+    // project,
     blog,
     Contact,
     footerSection
