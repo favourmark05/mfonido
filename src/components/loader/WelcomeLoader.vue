@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center min-h-screen bg-gray-900 text-white">
-    <h1 class="text-5xl font-bold text-center font-mono">
+    <h1 class="text-sm font-bold text-center font-mono md:text-base lg:text-lg">
       <span class="flex justify-center items-center space-x-2">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-20 h-20 text-white" fill="currentColor">
         <path
