@@ -1,5 +1,6 @@
 <template>
-  <div
+  <div>
+    <div
     class="fixed left-10 top-152 flex flex-col justify-center items-center space-y-6 text-gray-600"
   >
     <a href="#" class="hover:text-white transition duration-300">
@@ -34,6 +35,7 @@
       </svg>
     </a>
     <div class="w-px h-16 bg-gray-500"></div>
+  </div>
   </div>
 </template>
 

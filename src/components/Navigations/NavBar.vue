@@ -42,7 +42,7 @@
     <!-- Header for larger screens -->
     <div class="fixed top-0 left-0 p-2 mt-4 md:m-6 w-full sm:w-1/2 lg:w-2/4 rounded-full">
       <!-- Background Layer -->
-      <div class="absolute inset-0 bg-blue-600 opacity-15 rounded-full "></div>
+      <div class="absolute inset-0 bg-blue-600 opacity-50 blur-sm border-xl rounded-full "></div>
       <!-- Content -->
       <div class="relative flex items-center justify-between p-1">
         <!-- Logo and Links -->
@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import IconBars from '../icons/IconBars.vue'
+import IconBars from '../icons/IconJs.vue'
 export default {
   component: {
     IconBars,
