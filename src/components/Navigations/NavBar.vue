@@ -74,6 +74,7 @@
             <nav class="sm:flex space-x-4 text-white px-2">
               <a href="#" class="hover:underline">About</a>
               <a href="#" class="hover:underline">Tools</a>
+              <a href="#" class="hover:underline">Projects</a>
               <a href="#" class="hover:underline">Writing</a>
               <a href="#" class="hover:underline">Contact</a>
             </nav>

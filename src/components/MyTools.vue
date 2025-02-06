@@ -1,8 +1,8 @@
 <template>
   <div class="px-1 lg:px-60 md:px-30 mt-20">
     <heading class="flex items-center space-x-4">
-      <p class="text-blue-500">O1</p>
-      <p class="text-3xl lg:text-5xl md:text-4xl font-extrabold font-mono text-gray-600">Tools</p>
+      <p class="text-blue-500">O2</p>
+      <p class="text-2xl lg:text-5xl md:text-4xl font-extrabold font-mono text-gray-600" style="font-weight: bolder;">Tools</p>
       <p class="w-35 lg:w-70 md:w-60 h-px bg-gray-700"></p>
     </heading>
     <p class="my-4 text-justify">
@@ -27,6 +27,7 @@
       <IconTypescript/>
       <IconFigma/>
       <IconNuxt/>
+      <IconFirebase/>
     </div>
   </div>
 </template>
@@ -46,6 +47,7 @@ import IconTailwind from './icons/IconTailwind.vue';
 import IconTypescript from './icons/IconTypescript.vue';
 import IconFigma from './icons/IconFigma.vue';
 import IconNuxt from './icons/IconNuxt.vue';
+import IconFirebase from './icons/IconFirebase.vue';
 </script>
 
 <style>

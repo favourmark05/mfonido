@@ -6,6 +6,7 @@
       <HeroPage />
       <AboutMe/>
       <MyTools/>
+      <MyProjects/>
       <SocialAccount />
     </div>
   </div>
@@ -19,6 +20,7 @@ import SocialAccount from './Navigations/SocialAccount.vue'
 import HeroPage from './HeroPage.vue'
 import AboutMe from './AboutMe.vue'
 import MyTools from './MyTools.vue'
+import MyProjects from './MyProjects.vue'
 
 const loader = ref(true)
 onMounted(() => {
