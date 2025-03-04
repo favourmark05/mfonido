@@ -1,8 +1,8 @@
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <template>
-  <div>
+  <div class="flex flex-col items-center">
     <svg
-      class="h-20 w-20 text-blue-500"
+      class="w-10 md:w-20 lg:w-20 xl:w-20 h-10 md:h-20 lg:h-20 xl:h-20 text-blue-500 hover:text-white transition-colors duration-300"
       viewBox="0 0 24 24"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
@@ -15,6 +15,6 @@
         stroke-linejoin="round"
       />
     </svg>
-    <p class="ml-2">Figma</p>
+    <p class="text-xs md:text-lg lg:text-lg xl:text-lg">Figma</p>
   </div>
 </template>

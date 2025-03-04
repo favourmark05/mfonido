@@ -4,7 +4,7 @@
     <div class="px-5 lg:px-20 md:px-15" v-else>
       <NavBar />
       <HeroPage />
-      <AboutMe/>
+      <AboutMe id="about-me"/>
       <MyTools/>
       <MyProjects/>
       <SocialAccount />

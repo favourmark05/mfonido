@@ -72,7 +72,7 @@
           <div class="hidden sm:flex items-center space-x-4">
             <!-- Navigation Links -->
             <nav class="sm:flex space-x-4 text-white px-2">
-              <a href="#" class="hover:underline">About</a>
+              <a href="#" @click.prevent="scrollToSection('about-me')" class="hover:underline">About</a>
               <a href="#" class="hover:underline">Tools</a>
               <a href="#" class="hover:underline">Projects</a>
               <a href="#" class="hover:underline">Writing</a>
@@ -105,6 +105,19 @@ export default {
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen
     },
+    scrollToSection(sectionId) {
+      const el = document.getElementById(sectionId)
+      if (el) {
+        const headerOffset = 100;
+        const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+      // el.scrollIntoView({ behavior: 'smooth' })
+    }
   },
 }
 </script>

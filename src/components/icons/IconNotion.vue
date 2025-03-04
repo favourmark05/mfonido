@@ -1,8 +1,8 @@
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <template>
-  <div class="flex flex-col space-x-5">
+  <div class="flex flex-col items-center">
     <svg
-      class="h-20 w-20 text-blue-500"
+      class="w-10 md:w-20 lg:w-20 xl:w-20 h-10 md:h-20 lg:h-20 xl:h-20 text-blue-500 hover:text-white transition-colors duration-300"
       fill="currentColor"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
@@ -16,6 +16,6 @@
         d="M1 4C1 2.34315 2.34315 1 4 1H20C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3Z"
       />
     </svg>
-    <p class="ml-3">Notion</p>
+    <p class="text-xs md:text-lg lg:text-lg xl:text-lg">Notion</p>
   </div>
 </template>

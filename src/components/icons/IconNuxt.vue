@@ -1,8 +1,8 @@
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <template>
-  <div>
+  <div class="flex flex-col items-center">
     <svg
-      class="w-20 h-20 bg-blue-500"
+      class="w-10 md:w-20 lg:w-20 xl:w-20 h-10 md:h-20 lg:h-20 xl:h-20 bg-blue-500 hover:text-white transition-colors duration-300"
       fill="currentColor"
       viewBox="0 0 32 32"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,6 +18,6 @@
         d="M25.233,25.7l.026-.052.07-.139a1.278,1.278,0,0,0,.061-.7,2.11,2.11,0,0,0-.27-.724l-6.286-10.9-.95-1.656h-.017l-.959,1.648-6.277,10.9a2.18,2.18,0,0,0-.244.715,1.438,1.438,0,0,0,.148.942,1.563,1.563,0,0,0,1.482.7H23.725a1.79,1.79,0,0,0,1.508-.741ZM17.866,14.836,23.62,24.8H12.112Z"
       />
     </svg>
-    <p>NuxtJs</p>
+    <p class="text-xs md:text-lg lg:text-lg xl:text-lg">NuxtJs</p>
   </div>
 </template>
