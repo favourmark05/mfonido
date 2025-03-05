@@ -1,8 +1,11 @@
 <template>
-  <div class="px-1 lg:px-40 md:px-30 mt-20">
+  <div class="px-1 lg:px-40 md:px-30 mt-20 mb-20">
     <heading class="flex items-center space-x-4">
       <p class="text-blue-500">O3</p>
-      <p class="text-xl lg:text-5xl md:text-4xl font-extrabold font-mono text-gray-600" style="font-weight: bolder;">
+      <p
+        class="text-xl lg:text-5xl md:text-4xl font-extrabold font-mono text-gray-600"
+        style="font-weight: bolder"
+      >
         A Glimpse Into What I’ve Created
       </p>
       <p class="w-35 lg:w-70 md:w-60 h-px bg-gray-700"></p>
@@ -14,11 +17,41 @@
       interfaces to innovative solutions, these projects reflect my growth, creativity, and
       dedication to solving real-world problems. Dive in and explore the stories behind the code! 🌟
     </p>
-    <div class="grid grid-cols-4 sm:grid-cols-4 gap-6"></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div
+        v-for="(project, index) in projects"
+        :key="index"
+        class="flex flex-col sm:flex-row gap-4 hover:shadow-xl hover:border-blue-500 border-r-4 border-transparent rounded-md px-2 py-2 transition-all duration-300 space-y-6"
+      >
+        <img
+          :src="project.image"
+          :alt="project.title"
+          class="w-full max-w-xs sm:w-60 h-40 object-cover rounded-lg"
+        />
+        <div class="flex-1 space-y-4">
+          <p class="text-2xl font-bold text-white">{{ project.title }}</p>
+          <p class="text-sm text-gray-600">
+            Web app for visualizing personalized Spotify data. View your top artists, top tracks,
+            recently played tracks, and detailed audio information about each track. Create and save
+            new playlists of recommended tracks based on your existing playlists and more.
+          </p>
+          <span class="text-gray-500 text-xs">⭐ Stars</span>
+          <div class="flex flex-wrap gap-2 py-2">
+            <span
+              v-for="tech in project.technology"
+              :key="tech"
+              class="inline-block px-2 py-1 bg-blue-500 text-xs rounded-full whitespace-nowrap"
+              >{{ tech }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
+import { projects } from '@/Api/projects.js'
 </script>
 
 <style>
