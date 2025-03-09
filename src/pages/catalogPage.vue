@@ -16,7 +16,7 @@
         </thead>
         <tbody>
           <tr
-            v-for="(project, index) in projects"
+            v-for="(project, index) in catalog"
             :key="index"
             class="border-b border-gray-700 hover:bg-gray-800 transition"
           >
@@ -51,7 +51,7 @@
     <!-- Mobile View (Stacked Layout) -->
     <div class="md:hidden space-y-6">
         <div
-          v-for="(project, index) in projects"
+          v-for="(project, index) in catalog"
           :key="index"
           class="border-b border-gray-700 pb-4"
         >
@@ -68,45 +68,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      projects: [
-        {
-          year: 2023,
-          name: "Emerson Collective",
-          company: "Upstatement",
-          techStack: ["Next.js", "TypeScript", "SCSS", "Contentful"],
-          link: "https://emersoncollective.com",
-          linkText: "emersoncollective.com",
-        },
-        {
-          year: 2023,
-          name: "Harvard Business School Next.js Site",
-          company: "Upstatement",
-          techStack: ["React", "TypeScript", "Next.js", "Contentful"],
-          link: "https://hbs.edu",
-          linkText: "hbs.edu",
-        },
-        {
-          year: 2022,
-          name: "Harvard Business School Design System",
-          company: "Upstatement",
-          techStack: ["Storybook", "React", "TypeScript"],
-          link: "#",
-          linkText: "hbs.edu",
-        },
-        {
-          year: 2022,
-          name: "Threadable",
-          company: "Upstatement",
-          techStack: ["React Native", "Ruby on Rails", "Firebase"],
-          link: "https://apps.apple.com",
-          linkText: "apps.apple.com",
-        },
-      ],
-    };
-  },
-};
+<script setup>
+import { catalog } from '@/Api/catalog.js'
 </script>
