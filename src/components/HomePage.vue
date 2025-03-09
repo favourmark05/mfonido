@@ -3,10 +3,10 @@
     <WelcomeLoader v-if="loader" />
     <div class="px-5 lg:px-20 md:px-15" v-else>
       <NavBar />
-      <HeroPage />
+      <HeroPage id="home"/>
       <AboutMe id="about-me"/>
-      <MyTools/>
-      <MyProjects/>
+      <MyTools id="tools"/>
+      <MyProjects id="projects"/>
       <SocialAccount />
     </div>
   </div>

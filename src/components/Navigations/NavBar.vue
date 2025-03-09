@@ -3,7 +3,7 @@
     <!-- Mobile Sidebar Overlay -->
     <div
       v-if="isSidebarOpen"
-      class="fixed inset-0 bg-blue-600 bg-opacity-10  opacity-85 z-50 sm:hidden"
+      class="fixed inset-0 bg-blue-600 bg-opacity-10 opacity-85 z-50 sm:hidden"
       @click="toggleSidebar"
     ></div>
 
@@ -42,7 +42,7 @@
     <!-- Header for larger screens -->
     <div class="fixed top-0 left-0 p-2 mt-4 md:m-6 w-full sm:w-1/2 lg:w-2/4 rounded-full">
       <!-- Background Layer -->
-      <div class="absolute inset-0 bg-blue-600 opacity-50 blur-sm border-xl rounded-full "></div>
+      <div class="absolute inset-0 bg-blue-600 opacity-50 blur-sm border-xl rounded-full"></div>
       <!-- Content -->
       <div class="relative flex items-center justify-between p-1">
         <!-- Logo and Links -->
@@ -72,11 +72,14 @@
           <div class="hidden sm:flex items-center space-x-4">
             <!-- Navigation Links -->
             <nav class="sm:flex space-x-4 text-white px-2">
-              <a href="#" @click.prevent="scrollToSection('about-me')" class="hover:underline">About</a>
-              <a href="#" class="hover:underline">Tools</a>
-              <a href="#" class="hover:underline">Projects</a>
-              <a href="#" class="hover:underline">Writing</a>
-              <a href="#" class="hover:underline">Contact</a>
+              <a
+                v-for="item in menuItems"
+                :key="item.id"
+                @click.prevent="scrollToSection(item.section)"
+                class="hover:underline cursor-pointer"
+              >
+                {{ item.label }}
+              </a>
             </nav>
             <button
               class="bg-black text-white px-4 py-2 rounded-full font-medium hover:bg-gray-800"
@@ -99,6 +102,13 @@ export default {
   data() {
     return {
       isSidebarOpen: false,
+      menuItems: [
+        { id: 1, label: 'About', section: 'about-me' },
+        { id: 2, label: 'Tools', section: 'tools' },
+        { id: 3, label: 'Projects', section: 'projects' },
+        { id: 4, label: 'Writing', section: 'writings' },
+        { id: 5, label: 'Contact', section: 'contact' },
+      ],
     }
   },
   methods: {
@@ -108,16 +118,16 @@ export default {
     scrollToSection(sectionId) {
       const el = document.getElementById(sectionId)
       if (el) {
-        const headerOffset = 100;
-        const elementPosition = el.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - headerOffset;
+        const headerOffset = 100
+        const elementPosition = el.getBoundingClientRect().top + window.scrollY
+        const offsetPosition = elementPosition - headerOffset
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth',
-        });
+        })
       }
       // el.scrollIntoView({ behavior: 'smooth' })
-    }
+    },
   },
 }
 </script>

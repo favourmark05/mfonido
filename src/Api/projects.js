@@ -20,28 +20,22 @@ technology: [
 {
   image: thePixploreImg,
   url:'https://thepixplore.netlify.app/',
-  title: 'PixPlore',
+  title: 'Developer Page',
   description: '',
   technology: [
-    'vue3',
-    'scss',
-    'vite',
-    'netlify',
-    'pinia',
-    'unsplash Api',
+    'Angular',
+    'Node.js',
+    'Notion'
   ]
   },
   {
     image: thePixploreImg || './assets/images/thepixplore.png',
     url:'https://thepixplore.netlify.app/',
-    title: 'PixPlore',
+    title: 'Blog Page',
     description: '',
     technology: [
-      'vue3',
-      'scss',
-      'vite',
-      'netlify',
-      'pinia',
-      'unsplash Api',
+      'Angular',
+      'Node.js',
+      'Notion'
     ]
     }]

@@ -17,26 +17,29 @@
       interfaces to innovative solutions, these projects reflect my growth, creativity, and
       dedication to solving real-world problems. Dive in and explore the stories behind the code! 🌟
     </p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-      <div
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+      <a
         v-for="(project, index) in projects"
         :key="index"
-        class="flex flex-col sm:flex-row gap-4 hover:shadow-xl hover:border-blue-500 border-r-4 border-transparent rounded-md px-2 py-2 transition-all duration-300 space-y-6"
+        :href="project.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cursor-pointer flex flex-col sm:flex-row gap-4 hover:shadow-xl mx-auto hover:border-blue-500 border-r-4 border-transparent rounded-md px-2 py-2 transition-all duration-300 space-y-6 lg:max-w-220"
       >
         <img
           :src="project.image"
           :alt="project.title"
-          class="w-full max-w-xs sm:w-60 h-40 object-cover rounded-lg"
+          class="w-full max-w-xs sm:w-70 h-40 object-cover rounded-lg"
         />
         <div class="flex-1 space-y-4">
           <p class="text-2xl font-bold text-white">{{ project.title }}</p>
-          <p class="text-sm text-gray-600">
+          <p class="text-sm text-gray-600 max-w-140 Okay ">
             Web app for visualizing personalized Spotify data. View your top artists, top tracks,
             recently played tracks, and detailed audio information about each track. Create and save
             new playlists of recommended tracks based on your existing playlists and more.
           </p>
-          <span class="text-gray-500 text-xs">⭐ Stars</span>
-          <div class="flex flex-wrap gap-2 py-2">
+          <!-- <small class="text-gray-500 text-xs">⭐ Stars</small> -->
+          <div class="flex flex-wrap gap-2 mt-1">
             <span
               v-for="tech in project.technology"
               :key="tech"
@@ -45,7 +48,12 @@
             >
           </div>
         </div>
-      </div>
+      </a>
+    </div>
+    <div class="flex flex-col mx-auto text-center hover:underline decoration-blue-500 cursor-pointer mt-3 ">
+      <router-link to="/catalog">
+        <p>There are a lot more you know right?, Check Collections <span class="font-extrabold! text-blue-500">&rarr;</span> </p>
+      </router-link>
     </div>
   </div>
 </template>
