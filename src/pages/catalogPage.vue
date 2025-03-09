@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen bg-gray-900 text-white p-8 mx-30 mt-30">
+  <div class="min-h-screen bg-gray-900 text-white p-8 sm:mx-30 sm:mt-30">
     <router-link to="/" class="text-green-400 hover:underline">&larr; Mfonido Mark</router-link>
-    <h1 class="text-4xl font-bold mt-2">All Projects</h1>
+    <h1 class="text-4xl font-bold mt-2 pb-5">All Projects</h1>
 
     <div class="mt-6 overflow-x-auto hidden md:block">
       <table class="w-full border-collapse text-left">
