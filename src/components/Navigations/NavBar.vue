@@ -48,11 +48,11 @@
         <!-- Logo and Links -->
         <div class="flex items-center space-x-6">
           <!-- Logo -->
-          <div class="flex items-center text-white space-x-2">
+          <div class="flex items-center text-white space-x-2 cursor-pointer" @click.prevent="scrollToSection('mfonido-mark')">
             <div class="rounded-full bg-white w-6 h-6 flex items-center justify-center">
               <span class="text-blue-600 font-bold">B</span>
             </div>
-            <span class="font-bold text-lg">Mfonido Mark</span>
+            <span class="font-bold text-lg" >Mfonido Mark</span>
           </div>
         </div>
         <!-- Buttons and Mobile Toggle Button -->
@@ -84,7 +84,7 @@
             <button
               class="bg-black text-white px-4 py-2 rounded-full font-medium hover:bg-gray-800"
             >
-              Resume
+              <a href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view" target="_blank">Resume</a>
             </button>
           </div>
         </div>
@@ -106,7 +106,7 @@ export default {
         { id: 1, label: 'About', section: 'about-me' },
         { id: 2, label: 'Tools', section: 'tools' },
         { id: 3, label: 'Projects', section: 'projects' },
-        { id: 4, label: 'Writing', section: 'writings' },
+        { id: 4, label: 'Writing', section: 'writing' },
         { id: 5, label: 'Contact', section: 'contact' },
       ],
     }

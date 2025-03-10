@@ -3,12 +3,12 @@
     <WelcomeLoader v-if="loader" />
     <div class="px-5 lg:px-20 md:px-15" v-else>
       <NavBar />
-      <HeroPage id="home"/>
+      <HeroPage id="mfonido-mark"/>
       <AboutMe id="about-me"/>
       <MyTools id="tools"/>
       <MyProjects id="projects"/>
       <SocialAccount />
-      <MyWritings />
+      <MyWritings id="writing"/>
     </div>
   </div>
 </template>
