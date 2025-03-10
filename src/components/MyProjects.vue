@@ -34,9 +34,7 @@
         <div class="flex-1 space-y-4">
           <p class="text-2xl font-bold text-white">{{ project.title }}</p>
           <p class="text-sm text-gray-600 max-w-140 Okay ">
-            Web app for visualizing personalized Spotify data. View your top artists, top tracks,
-            recently played tracks, and detailed audio information about each track. Create and save
-            new playlists of recommended tracks based on your existing playlists and more.
+            {{ project.description }}
           </p>
           <!-- <small class="text-gray-500 text-xs">⭐ Stars</small> -->
           <div class="flex flex-wrap gap-2 mt-1">

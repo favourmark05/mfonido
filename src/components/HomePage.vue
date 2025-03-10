@@ -8,6 +8,7 @@
       <MyTools id="tools"/>
       <MyProjects id="projects"/>
       <SocialAccount />
+      <MyWritings />
     </div>
   </div>
 </template>
@@ -21,6 +22,7 @@ import HeroPage from './HeroPage.vue'
 import AboutMe from './AboutMe.vue'
 import MyTools from './MyTools.vue'
 import MyProjects from './MyProjects.vue'
+import MyWritings from './MyWritings.vue'
 
 const loader = ref(true)
 onMounted(() => {

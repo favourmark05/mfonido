@@ -21,9 +21,12 @@ technology: [
   image: thePixploreImg,
   url:'https://thepixplore.netlify.app/',
   title: 'Developer Page',
-  description: '',
+  description: `Web app for visualizing personalized Spotify data. View your top artists, top tracks,
+            recently played tracks, and detailed audio information about each track. Create and save
+            new playlists of recommended tracks based on your existing playlists and more.`,
   technology: [
     'Angular',
+    'Typescript',
     'Node.js',
     'Notion'
   ]
@@ -32,9 +35,12 @@ technology: [
     image: thePixploreImg || './assets/images/thepixplore.png',
     url:'https://thepixplore.netlify.app/',
     title: 'Blog Page',
-    description: '',
+    description: `Web app for visualizing personalized Spotify data. View your top artists, top tracks,
+            recently played tracks, and detailed audio information about each track. Create and save
+            new playlists of recommended tracks based on your existing playlists and more.`,
     technology: [
       'Angular',
+      'Typescript',
       'Node.js',
       'Notion'
     ]
