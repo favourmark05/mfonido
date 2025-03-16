@@ -1,47 +1,49 @@
 <script setup>
-import { ref } from 'vue';
-import IconTwitter from '../icons/IconTwitter.vue';
-import IconLinkedin from '../icons/IconLinkedin.vue';
-import IconMail from '../icons/IconMail.vue';
+import { ref } from 'vue'
+import IconTwitter from '../icons/IconTwitter.vue'
+import IconLinkedin from '../icons/IconLinkedin.vue'
+import IconMail from '../icons/IconMail.vue'
 
-const isSidebarOpen = ref(false);
-const isModalOpen = ref(false);
+const isSidebarOpen = ref(false)
+const isModalOpen = ref(false)
 const menuItems = ref([
   { id: 1, label: 'About', section: 'about-me' },
   { id: 2, label: 'Tools', section: 'tools' },
   { id: 3, label: 'Projects', section: 'projects' },
   { id: 4, label: 'Writing', section: 'writing' },
   { id: 5, label: 'Contact', section: 'contact' },
-]);
+])
 
 const toggleSidebar = () => {
-  isSidebarOpen.value = !isSidebarOpen.value;
-};
+  isSidebarOpen.value = !isSidebarOpen.value
+}
 
 const handleMenuClick = (section) => {
-  if (section === "contact") {
-    isModalOpen.value = true;
+  if (section === 'contact') {
+    isModalOpen.value = true
+    isSidebarOpen.value = false
   } else {
-    scrollToSection(section);
+    scrollToSection(section)
+    isSidebarOpen.value = false
   }
-};
+}
 
 const scrollToSection = (sectionId) => {
-  const el = document.getElementById(sectionId);
+  const el = document.getElementById(sectionId)
   if (el) {
-    const headerOffset = 100;
-    const elementPosition = el.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - headerOffset;
+    const headerOffset = 100
+    const elementPosition = el.getBoundingClientRect().top + window.scrollY
+    const offsetPosition = elementPosition - headerOffset
     window.scrollTo({
       top: offsetPosition,
       behavior: 'smooth',
-    });
+    })
   }
-};
+}
 
 const closeModal = () => {
-  isModalOpen.value = false;
-};
+  isModalOpen.value = false
+}
 </script>
 
 <template>
@@ -74,13 +76,20 @@ const closeModal = () => {
           </button>
         </div>
         <nav class="space-y-6 p-4 text-center text-2xl">
-          <a href="#" class="hover:underline block">About</a>
-          <a href="#" class="hover:underline block">Tools</a>
-          <a href="#" class="hover:underline block">Writing</a>
-          <a href="#" class="hover:underline block">Contact</a>
-          <button class="bg-black text-white px-4 py-2 rounded-full font-medium hover:bg-gray-800">
-            Resume
-          </button>
+          <a
+            v-for="item in menuItems"
+            :key="item.id"
+            @click.prevent="handleMenuClick(item.section)"
+            class="hover:underline block"
+            >{{ item.label }}</a
+          >
+          <a
+              href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view"
+              target="_blank"
+              class="relative px-5 py-2 rounded-xl font-medium text-white bg-black transition-all duration-300 hover:bg-gray-800 glow-border"
+            >
+              Resume
+            </a>
         </nav>
       </div>
     </transition>
@@ -130,7 +139,9 @@ const closeModal = () => {
                 {{ item.label }}
               </a>
             </nav>
-            <a href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view" target="_blank"
+            <a
+              href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view"
+              target="_blank"
               class="relative px-5 py-2 rounded-xl font-medium text-white bg-black transition-all duration-300 hover:bg-gray-800 glow-border"
             >
               Resume
@@ -159,9 +170,7 @@ const closeModal = () => {
           </button>
 
           <!-- Modal Header -->
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">
-            Let's Connect!
-          </h2>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">Let's Connect!</h2>
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
             Choose a platform to reach out.
           </p>
@@ -174,7 +183,7 @@ const closeModal = () => {
               target="_blank"
               class="text-blue-700 cursor-pointer p-4 text-3xl transition hover:scale-110"
             >
-            <IconTwitter />
+              <IconTwitter />
             </a>
 
             <!-- LinkedIn -->
@@ -191,7 +200,7 @@ const closeModal = () => {
               href="mailto:mfonidomark@gmail.com"
               class="text-blue-700 cursor-pointer p-4 text-3xl transition hover:scale-110"
             >
-            <IconMail />
+              <IconMail />
             </a>
           </div>
         </div>
@@ -212,35 +221,53 @@ const closeModal = () => {
 }
 /* Glowing Animated Border */
 .glow-border {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-  }
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
 
-  .glow-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 12px;
-    padding: 2px; /* Border thickness */
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #0051ff, #7700ff, #ff00c3, #ff0000);
-    background-size: 300% 300%;
-    animation: glow 6s linear infinite;
-    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
-    mask-composite: exclude;
-  }
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px; /* Border thickness */
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #0051ff,
+    #7700ff,
+    #ff00c3,
+    #ff0000
+  );
+  background-size: 300% 300%;
+  animation: glow 6s linear infinite;
+  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  mask-composite: exclude;
+}
 
-  @keyframes glow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes glow {
+  0% {
+    background-position: 0% 50%;
   }
-  /* Modal Transition */
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Modal Transition */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
   transform: scale(0.95);
 }

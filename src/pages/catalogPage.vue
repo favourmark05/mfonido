@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-900 text-white p-8 sm:mx-30 sm:mt-30">
-    <router-link to="/" class="text-green-400 hover:underline">&larr; Mfonido Mark</router-link>
+    <router-link to="/" class="text-blue-500 cursor-pointer">&larr; Mfonido Mark</router-link>
     <h1 class="text-4xl font-bold mt-2 pb-5">All Projects</h1>
 
     <div class="mt-6 overflow-x-auto hidden md:block">
@@ -28,7 +28,7 @@
                 <span
                   v-for="tech in project.techStack"
                   :key="tech"
-                  class="px-2 py-1 bg-gray-800 text-xs text-teal-300 rounded-full"
+                  class="px-2 py-1 bg-gray-800 text-xs text-blue-500 rounded-full"
                 >
                   {{ tech }}
                 </span>

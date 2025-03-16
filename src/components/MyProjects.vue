@@ -41,7 +41,7 @@
             <span
               v-for="tech in project.technology"
               :key="tech"
-              class="inline-block px-2 py-1 bg-blue-500 text-xs rounded-full whitespace-nowrap"
+              class="inline-block px-2 py-1 bg-gray-800 text-blue-500 text-xs rounded-full whitespace-nowrap"
               >{{ tech }}</span
             >
           </div>

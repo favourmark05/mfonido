@@ -13,7 +13,7 @@
         Angular, Vue.js, and Nuxt.js. With over six years in the industry, I excel in building fast,
         responsive, and accessible web applications while advocating for inclusive tech communities
         like GDSC, GDG, and Open Source Community Africa. <br/><br/>Skilled in product promotion, community
-        engagement, and technical content creation, I collaborate effectively across teams, deliver
+        engagement, and technical writing/content creation, I collaborate effectively across teams, deliver
         impactful presentations, and drive design system innovation. <br/><br/>A strong advocate for diversity
         and accessibility, I continuously seek opportunities to learn, mentor, and contribute to the
         tech ecosystem.

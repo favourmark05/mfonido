@@ -1,7 +1,7 @@
 <template>
   <div class="px-1 lg:px-40 md:px-30 mt-20 mb-20">
     <heading class="flex items-center space-x-4">
-      <p class="text-blue-500">O3</p>
+      <p class="text-blue-500">O4</p>
       <p
         class="text-xl lg:text-5xl md:text-4xl font-extrabold font-mono text-gray-600"
         style="font-weight: bolder"

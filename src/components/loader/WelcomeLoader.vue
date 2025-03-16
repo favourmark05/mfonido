@@ -2,13 +2,31 @@
   <div class="flex items-center justify-center min-h-screen bg-gray-900 text-white">
     <h1 class="text-sm font-bold text-center font-mono md:text-base lg:text-lg">
       <span class="flex justify-center items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-20 h-20 text-white" fill="currentColor">
-        <path
-          d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"
-        />
-      </svg>
+        <svg
+          width="800px"
+          height="800px"
+          viewBox="0 0 24 24"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-labelledby="anchorIconTitle"
+          stroke="#fff"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+          color="#fff"
+          class="w-20 h-20 text-white"
+        >
+          <title id="anchorIconTitle">Anchor</title>
+          <path d="M12 20L12 7M9 10L15 10" />
+          <circle cx="12" cy="5" r="2" />
+          <path d="M20,14 C18.6666667,18 16,20 12,20 C8,20 5.33333333,18 4,14" />
+        </svg>
       </span>
-      <span>Welcome, <br> Good </span>
+      <span
+        >Welcome, <br />
+        Good
+      </span>
       <span
         v-for="(char, index) in animatedText"
         :key="index"
@@ -18,6 +36,7 @@
         {{ char }}
       </span>
     </h1>
+    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
   </div>
 </template>
 
