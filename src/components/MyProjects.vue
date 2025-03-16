@@ -19,7 +19,7 @@
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
       <a
-        v-for="(project, index) in projects"
+        v-for="(project, index) in firstFourProjects"
         :key="index"
         :href="project.url"
         target="_blank"
@@ -33,7 +33,7 @@
         />
         <div class="flex-1 space-y-4">
           <p class="text-2xl font-bold text-white">{{ project.title }}</p>
-          <p class="text-sm text-gray-600 max-w-140 Okay ">
+          <p class="text-sm text-gray-600 max-w-140 text-justify">
             {{ project.description }}
           </p>
           <!-- <small class="text-gray-500 text-xs">⭐ Stars</small> -->
@@ -58,6 +58,7 @@
 
 <script setup>
 import { projects } from '@/Api/projects.js'
+const firstFourProjects = projects.slice(0,4)
 </script>
 
 <style>

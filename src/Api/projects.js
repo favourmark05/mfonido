@@ -1,6 +1,7 @@
 import thePixploreImg from '@/assets/images/thepixplore.png';
 import developerImg from '@/assets/images/developer.png'
 import blogImg from '@/assets/images/blogs.png'
+import BetPlatformImg from '@/assets/images/online.png'
 
 
 export const projects = [{
@@ -51,10 +52,10 @@ linkText: 'thepixplore.netlify.app'
     linkText: 'blog.remita.net'
     },
   {
-    image: blogImg || './assets/images/thepixplore.png',
+    image: BetPlatformImg || './assets/images/thepixplore.png',
     url:'http://online.cygnusspin.com/',
     title: 'Online Bet Platform',
-    description: `A dedicated blog platform for Remita, featuring insightful articles on fintech trends, payment solutions, API integrations, and industry best practices. Developers, businesses, and financial experts can explore in-depth guides, case studies, and updates on Remita’s products and services. The blog also provides tutorials, use cases, and expert opinions to help users maximize the potential of Remita’s payment ecosystem.`,
+    description: `An online betting platform offering a seamless and secure experience for users to place bets on sports, casino games, and virtual events. The platform features real-time odds, live betting, multiple payment options, and an intuitive user interface. With advanced analytics, personalized recommendations, and responsible gaming features, users can enjoy an engaging and fair betting experience.`,
     technology: [
       'Nuxtjs',
       'Pinia',
@@ -79,5 +80,19 @@ linkText: 'thepixplore.netlify.app'
     company: 'Rumuomasi Church',
     year: 2023,
     linkText: 'rumuomasichurchofchrist.org'
+    },
+  {
+    image: blogImg || './assets/images/thepixplore.png',
+    url:'https://sellersmart.ng/',
+    title: 'SellersMart E-commerce',
+    description: `A dedicated blog platform for Remita, featuring insightful articles on fintech trends, payment solutions, API integrations, and industry best practices. Developers, businesses, and financial experts can explore in-depth guides, case studies, and updates on Remita’s products and services. The blog also provides tutorials, use cases, and expert opinions to help users maximize the potential of Remita’s payment ecosystem.`,
+    technology: [
+      'Nuxtjs',
+      'vuex',
+      'Bootstrap',
+    ],
+    company: 'Sellers Mart',
+    year: 2023,
+    linkText: 'sellersmart.ng'
     },
   ]
