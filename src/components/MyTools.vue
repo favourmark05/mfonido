@@ -29,6 +29,7 @@
       <IconNuxt/>
       <IconFirebase/>
       <IconTrello/>
+      <IconTwitter />
     </div>
   </div>
 </template>
@@ -50,6 +51,7 @@ import IconFigma from './icons/IconFigma.vue';
 import IconNuxt from './icons/IconNuxt.vue';
 import IconFirebase from './icons/IconFirebase.vue';
 import IconTrello from './icons/IconTrello.vue';
+import IconTwitter from './icons/IconTwitter.vue';
 </script>
 
 <style>

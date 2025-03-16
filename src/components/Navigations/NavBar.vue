@@ -1,3 +1,49 @@
+<script setup>
+import { ref } from 'vue';
+import IconTwitter from '../icons/IconTwitter.vue';
+import IconLinkedin from '../icons/IconLinkedin.vue';
+import IconMail from '../icons/IconMail.vue';
+
+const isSidebarOpen = ref(false);
+const isModalOpen = ref(false);
+const menuItems = ref([
+  { id: 1, label: 'About', section: 'about-me' },
+  { id: 2, label: 'Tools', section: 'tools' },
+  { id: 3, label: 'Projects', section: 'projects' },
+  { id: 4, label: 'Writing', section: 'writing' },
+  { id: 5, label: 'Contact', section: 'contact' },
+]);
+
+const toggleSidebar = () => {
+  isSidebarOpen.value = !isSidebarOpen.value;
+};
+
+const handleMenuClick = (section) => {
+  if (section === "contact") {
+    isModalOpen.value = true;
+  } else {
+    scrollToSection(section);
+  }
+};
+
+const scrollToSection = (sectionId) => {
+  const el = document.getElementById(sectionId);
+  if (el) {
+    const headerOffset = 100;
+    const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  }
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
+</script>
+
 <template>
   <div>
     <!-- Mobile Sidebar Overlay -->
@@ -48,11 +94,14 @@
         <!-- Logo and Links -->
         <div class="flex items-center space-x-6">
           <!-- Logo -->
-          <div class="flex items-center text-white space-x-2 cursor-pointer" @click.prevent="scrollToSection('mfonido-mark')">
+          <div
+            class="flex items-center text-white space-x-2 cursor-pointer"
+            @click.prevent="scrollToSection('mfonido-mark')"
+          >
             <div class="rounded-full bg-white w-6 h-6 flex items-center justify-center">
-              <span class="text-blue-600 font-bold">B</span>
+              <span class="text-blue-600 font-bold">M</span>
             </div>
-            <span class="font-bold text-lg" >Mfonido Mark</span>
+            <span class="font-bold text-lg">Mfonido Mark</span>
           </div>
         </div>
         <!-- Buttons and Mobile Toggle Button -->
@@ -75,62 +124,81 @@
               <a
                 v-for="item in menuItems"
                 :key="item.id"
-                @click.prevent="scrollToSection(item.section)"
+                @click.prevent="handleMenuClick(item.section)"
                 class="hover:underline cursor-pointer"
               >
                 {{ item.label }}
               </a>
             </nav>
-            <button
-              class="bg-black text-white px-4 py-2 rounded-full font-medium hover:bg-gray-800"
+            <a href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view" target="_blank"
+              class="relative px-5 py-2 rounded-xl font-medium text-white bg-black transition-all duration-300 hover:bg-gray-800 glow-border"
             >
-              <a href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view" target="_blank">Resume</a>
-            </button>
+              Resume
+            </a>
           </div>
         </div>
       </div>
     </div>
+
+    <transition name="fade">
+      <div
+        v-if="isModalOpen"
+        @click="closeModal"
+        class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-md index"
+      >
+        <div
+          class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-8 w-[380px] relative text-center transform transition-all scale-100 hover:scale-105"
+          @click.stop
+        >
+          <!-- Close Button -->
+          <button
+            @click="closeModal"
+            class="absolute top-3 right-4 text-gray-500 dark:text-gray-300 hover:text-red-500 transition cursor-pointer"
+          >
+            <span>X</span>
+          </button>
+
+          <!-- Modal Header -->
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+            Let's Connect!
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
+            Choose a platform to reach out.
+          </p>
+
+          <!-- Contact Options -->
+          <div class="flex justify-center gap-6">
+            <!-- Twitter -->
+            <a
+              href="https://x.com/MfonidoMark"
+              target="_blank"
+              class="text-blue-700 cursor-pointer p-4 text-3xl transition hover:scale-110"
+            >
+            <IconTwitter />
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://linkedin.com/in/mfonido-mark-4baa42120/"
+              target="_blank"
+              class="text-blue-700 cursor-pointer p-4 text-3xl transition hover:scale-110"
+            >
+              <IconLinkedin />
+            </a>
+
+            <!-- Email -->
+            <a
+              href="mailto:mfonidomark@gmail.com"
+              class="text-blue-700 cursor-pointer p-4 text-3xl transition hover:scale-110"
+            >
+            <IconMail />
+            </a>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
-
-<script>
-import IconBars from '../icons/IconJs.vue'
-export default {
-  component: {
-    IconBars,
-  },
-  data() {
-    return {
-      isSidebarOpen: false,
-      menuItems: [
-        { id: 1, label: 'About', section: 'about-me' },
-        { id: 2, label: 'Tools', section: 'tools' },
-        { id: 3, label: 'Projects', section: 'projects' },
-        { id: 4, label: 'Writing', section: 'writing' },
-        { id: 5, label: 'Contact', section: 'contact' },
-      ],
-    }
-  },
-  methods: {
-    toggleSidebar() {
-      this.isSidebarOpen = !this.isSidebarOpen
-    },
-    scrollToSection(sectionId) {
-      const el = document.getElementById(sectionId)
-      if (el) {
-        const headerOffset = 100
-        const elementPosition = el.getBoundingClientRect().top + window.scrollY
-        const offsetPosition = elementPosition - headerOffset
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        })
-      }
-      // el.scrollIntoView({ behavior: 'smooth' })
-    },
-  },
-}
-</script>
 
 <style scoped>
 /* Add transition styles for the sidebar */
@@ -141,5 +209,42 @@ export default {
 
 .sidebar-enter, .sidebar-leave-to /* .sidebar-leave-active in <2.1.8 */ {
   transform: translateX(-100%);
+}
+/* Glowing Animated Border */
+.glow-border {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .glow-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px; /* Border thickness */
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #0051ff, #7700ff, #ff00c3, #ff0000);
+    background-size: 300% 300%;
+    animation: glow 6s linear infinite;
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+  }
+
+  @keyframes glow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  /* Modal Transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.index {
+  z-index: 9999999;
 }
 </style>
