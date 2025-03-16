@@ -54,9 +54,9 @@ html, body {
   pointer-events: none;
   background: radial-gradient(
     circle,
-    rgba(59, 130, 246, 0.3) 0%,    /* blue-500 with 30% opacity */
-    rgba(59, 130, 246, 0.1) 40%,   /* blue-500 with 10% opacity */
-    rgba(59, 130, 246, 0) 70% 
+    rgba(59, 130, 246, 0.3) 0%,
+    rgba(59, 130, 246, 0.1) 40%,
+    rgba(59, 130, 246, 0) 70%
   );
   z-index: 1000;
 }
