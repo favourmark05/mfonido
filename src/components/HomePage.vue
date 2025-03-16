@@ -26,6 +26,7 @@ import MyWritings from './MyWritings.vue'
 
 const loader = ref(true)
 onMounted(() => {
+
   const hasVisited = sessionStorage.getItem('hasVisitedBefore')
 
   if (!hasVisited) {
