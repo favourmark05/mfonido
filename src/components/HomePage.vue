@@ -26,9 +26,22 @@ import MyWritings from './MyWritings.vue'
 
 const loader = ref(true)
 onMounted(() => {
-  setTimeout(() => {
+  const hasVisited = sessionStorage.getItem('hasVisitedBefore')
+
+  if (!hasVisited) {
+    loader.value = true
+    sessionStorage.setItem('hasVisitedBefore', 'true')
+
+    setTimeout(() => {
+      loader.value = false
+    }, 5000)
+  } else {
     loader.value = false
-  }, 5000)
+  }
+
+  window.addEventListener('beforeunload', () => {
+    sessionStorage.removeItem('hasVisitedBefore')
+  })
 })
 </script>
 
