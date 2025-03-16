@@ -5,7 +5,7 @@
       <NavBar />
       <HeroPage id="mfonido-mark"/>
       <AboutMe id="about-me"/>
-      <MyCompanies />
+      <MyExperience id="experience"/>
       <MyTools id="tools"/>
       <MyProjects id="projects"/>
       <SocialAccount />
@@ -24,7 +24,7 @@ import AboutMe from './AboutMe.vue'
 import MyTools from './MyTools.vue'
 import MyProjects from './MyProjects.vue'
 import MyWritings from './MyWritings.vue'
-import MyCompanies from './MyCompanies.vue'
+import MyExperience from './MyExperience.vue'
 
 const loader = ref(true)
 onMounted(() => {

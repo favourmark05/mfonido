@@ -9,10 +9,12 @@ const isSidebarOpen = ref(false)
 const isModalOpen = ref(false)
 const menuItems = ref([
   { id: 1, label: 'About', section: 'about-me' },
-  { id: 2, label: 'Tools', section: 'tools' },
-  { id: 3, label: 'Projects', section: 'projects' },
-  { id: 4, label: 'Writing', section: 'writing' },
-  { id: 5, label: 'Contact', section: 'contact' },
+  { id: 2, label: 'Experience', section: 'experience' },
+  { id: 3, label: 'Tools', section: 'tools' },
+  { id: 4, label: 'Projects', section: 'projects' },
+  { id: 5, label: 'Writing', section: 'writing' },
+  { id: 6, label: 'Contact', section: 'contact' },
+  { id: 7, label: 'Experience', section: 'experience' },
 ])
 
 const toggleSidebar = () => {
@@ -96,7 +98,7 @@ const closeModal = () => {
     </transition>
 
     <!-- Header for larger screens -->
-    <div class="fixed top-0 left-0 p-2 mt-4 md:m-6 w-full sm:w-1/2 lg:w-2/4 rounded-full">
+    <div class="fixed top-0 left-0 p-2 mt-4 md:m-6 w-full sm:w-2/3 lg:w-3/5 rounded-full">
       <!-- Background Layer -->
       <div class="absolute inset-0 bg-blue-600 opacity-50 blur-sm border-xl rounded-full"></div>
       <!-- Content -->
