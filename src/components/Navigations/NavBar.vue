@@ -14,7 +14,6 @@ const menuItems = ref([
   { id: 4, label: 'Projects', section: 'projects' },
   { id: 5, label: 'Writing', section: 'writing' },
   { id: 6, label: 'Contact', section: 'contact' },
-  { id: 7, label: 'Experience', section: 'experience' },
 ])
 
 const toggleSidebar = () => {
