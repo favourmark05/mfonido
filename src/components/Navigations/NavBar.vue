@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import IconTwitter from '../icons/IconTwitter.vue'
 import IconLinkedin from '../icons/IconLinkedin.vue'
 import IconMail from '../icons/IconMail.vue'
+import IconClose from '../icons/IconClose.vue'
 
 const isSidebarOpen = ref(false)
 const isModalOpen = ref(false)
@@ -164,9 +165,9 @@ const closeModal = () => {
           <!-- Close Button -->
           <button
             @click="closeModal"
-            class="absolute top-3 right-4 text-gray-500 dark:text-gray-300 hover:text-red-500 transition cursor-pointer"
+            class="absolute top-3 right-4 text-gray-500 dark:text-gray-300 transition cursor-pointer"
           >
-            <span>X</span>
+            <IconClose />
           </button>
 
           <!-- Modal Header -->

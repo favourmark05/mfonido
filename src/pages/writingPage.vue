@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-900 text-white p-8 sm:mx-30 sm:mt-30">
-    <router-link to="/" class="text-blue-500 cursor-pointer">&larr; Mfonido Mark</router-link>
+    <p @click.prevent="goBack" class="text-blue-500 cursor-pointer">&larr; Mfonido Mark</p>
     <h1 class="text-4xl font-bold mt-2 pb-5">All Writings</h1>
 
     <div class="mt-6 overflow-x-auto hidden md:block">
@@ -56,4 +56,14 @@
 
 <script setup>
 import { writings } from '@/Api/writings.js'
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const goBack = () => router.go(-1)
+
+onMounted(() => {
+  window.scrollTo(0, 0)
+})
 </script>

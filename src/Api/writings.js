@@ -31,49 +31,58 @@ linkText: 'dev.to'
   },
 {
   image: thePixploreImg,
-  url:'https://thepixplore.netlify.app/',
+  url:'https://blog.remita.net/what-are-payment-gateways/',
   year: '2024',
-  title: `Web app for visualizing personalized Spotify data.`,
+  title: `What are payment Gateways.`,
+  linkText: 'blog.remita.net'
   },
 {
   image: thePixploreImg,
-  url:'https://thepixplore.netlify.app/',
+  url:'https://blog.remita.net/mastering-the-remita-interbank-transfer-api-a-comprehensive-guide/',
   year: '2024',
-  title: `Web app for visualizing personalized Spotify data.`,
+  title: `Mastering the Remita Interbank Transfer API: A Comprehensive Guide`,
+  linkText: 'blog.remita.net'
   },
 {
   image: thePixploreImg,
-  url:'https://thepixplore.netlify.app/',
+  url:'https://dev.to/favourmark05/a-comprehensive-guide-to-getting-started-as-a-technical-writer-3nfn',
   year: '2024',
-  title: `Web app for visualizing personalized Spotify data.`,
+  title: `A Comprehensive Guide to Getting Started as a Technical Writer`,
+  linkText: 'dev.to'
   },
 {
   image: thePixploreImg,
-  url:'https://thepixplore.netlify.app/',
-  year: '2024',
-  title: `Web app for visualizing personalized Spotify data.`,
+  url:'https://dev.to/favourmark05/getting-started-with-web-development-1cdj',
+  year: '2023',
+  title: `GETTING STARTED WITH WEB DEVELOPMENT`,
+  linkText: 'dev.to'
   },
 {
   image: thePixploreImg,
-  url:'https://thepixplore.netlify.app/',
-  year: '2024',
-  title: `Web app for visualizing personalized Spotify data.`,
+  url:'https://dev.to/favourmark05/getting-started-with-open-source-ohm',
+  year: '2022',
+  title: `Getting started With Open Source`,
+  linkText: 'dev.to'
   },
 {
   image: thePixploreImg,
-  url:'https://thepixplore.netlify.app/',
-  year: '2024',
-  title: `Web app for visualizing personalized Spotify data.`,
+  url:'https://dev.to/favourmark05/having-your-first-meetup-53n8',
+  year: '2020',
+  title: `HAVING YOUR FIRST MEETUP`,
+  linkText: 'dev.to'
   },
 {
   image: thePixploreImg,
-  url:'https://thepixplore.netlify.app/',
-  year: '2024',
-  title: `Web app for visualizing personalized Spotify data.`,
+  url:'https://dev.to/favourmark05/objectives-and-key-results-1j3i',
+  year: '2020',
+  title: `OBJECTIVES AND KEY RESULTS`,
+  linkText: 'dev.to'
   },
-  {
-    image: thePixploreImg || './assets/images/thepixplore.png',
-    url:'https://thepixplore.netlify.app/',
-    year: '2023',
-    title: `Web app for visualizing personalized Spotify data.`,
-    }]
+{
+  image: thePixploreImg,
+  url:'https://dev.to/favourmark05/inclusive-community-1l4g',
+  year: '2020',
+  title: `INCLUSIVE COMMUNITY`,
+  linkText: 'dev.to'
+  },
+]

@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-900 text-white p-8 sm:mx-30 sm:mt-30">
-    <router-link to="/" class="text-blue-500 cursor-pointer">&larr; Mfonido Mark</router-link>
+    <p @click.prevent="goBack" class="text-blue-500 cursor-pointer">&larr; Mfonido Mark</p>
     <h1 class="text-4xl font-bold mt-2 pb-5">All Projects</h1>
 
     <div class="mt-6 overflow-x-auto hidden md:block">
@@ -16,17 +16,17 @@
         </thead>
         <tbody>
           <tr
-            v-for="(project, index) in catalog"
+            v-for="(project, index) in projects"
             :key="index"
             class="border-b border-gray-700 hover:bg-gray-800 transition"
           >
             <td class="py-3 px-4">{{ project.year }}</td>
-            <td class="py-3 px-4 font-semibold text-white">{{ project.name }}</td>
+            <td class="py-3 px-4 font-semibold text-white">{{ project.title }}</td>
             <td class="py-3 px-4 text-gray-400">{{ project.company }}</td>
             <td class="py-3 px-4">
               <div class="flex flex-wrap gap-2">
                 <span
-                  v-for="tech in project.techStack"
+                  v-for="tech in project.technology"
                   :key="tech"
                   class="px-2 py-1 bg-gray-800 text-xs text-blue-500 rounded-full"
                 >
@@ -36,7 +36,7 @@
             </td>
             <td class="py-3 px-4">
               <a
-                :href="project.link"
+                :href="project.url"
                 target="_blank"
                 class="text-blue-400 hover:underline flex items-center"
               >
@@ -51,17 +51,17 @@
     <!-- Mobile View (Stacked Layout) -->
     <div class="md:hidden space-y-6">
         <div
-          v-for="(project, index) in catalog"
+          v-for="(project, index) in projects"
           :key="index"
           class="border-b border-gray-700 pb-4"
         >
           <p class="text-gray-400 text-sm">{{ project.year }}</p>
           <a
-            :href="project.link"
+            :href="project.url"
             target="_blank"
             class="text-lg font-semibold text-white flex items-center hover:underline"
           >
-            {{ project.name }} <span class="ml-1">↗</span>
+            {{ project.title }} <span class="ml-1">↗</span>
           </a>
         </div>
       </div>
@@ -69,5 +69,14 @@
 </template>
 
 <script setup>
-import { catalog } from '@/Api/catalog.js'
+import { projects } from '@/Api/projects.js'
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const goBack = () => router.go(-1)
+onMounted(() => {
+  window.scrollTo(0, 0)
+})
 </script>

@@ -41,7 +41,7 @@
     <div
       class="flex flex-col mx-auto text-center hover:underline decoration-blue-500 cursor-pointer mt-3"
     >
-      <router-link to="/catalog">
+      <router-link to="/writing">
         <p>
           There are a lot more you know right?, Check Collections
           <span class="font-extrabold! text-blue-500">&rarr;</span>
