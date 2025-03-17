@@ -274,6 +274,6 @@ const closeModal = () => {
   transform: scale(0.95);
 }
 .index {
-  z-index: 999999999999999999999999 !important;
+  z-index: 99999;
 }
 </style>
