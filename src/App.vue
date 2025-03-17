@@ -28,7 +28,7 @@ const pointerStyle = computed(() => {
 </script>
 
 <template>
-  <div class="app-container" @mousemove="handleMouseMove" ref="appContainer">
+  <div class="app-container bg-gray-900" @mousemove="handleMouseMove" ref="appContainer">
     <div class="pointer-light" :style="pointerStyle"></div>
     <RouterView />
   </div>
