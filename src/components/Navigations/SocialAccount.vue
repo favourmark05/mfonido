@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-    class="fixed left-10 top-152 flex flex-col justify-center items-center space-y-6 text-gray-600"
+    class="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex flex-row justify-center items-center space-x-6 text-gray-600 md:left-10 md:top-1/2 md:-translate-y-1/2 md:flex-col md:space-x-0 md:space-y-6"
   >
     <a href="https://github.com/favourmark05" class="hover:text-white transition duration-300">
       <svg
