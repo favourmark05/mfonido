@@ -49,7 +49,7 @@ const closeModal = () => {
 </script>
 
 <template>
-  <div>
+  <div class="index">
     <!-- Mobile Sidebar Overlay -->
     <div
       v-if="isSidebarOpen"
@@ -274,6 +274,6 @@ const closeModal = () => {
   transform: scale(0.95);
 }
 .index {
-  z-index: 9999999;
+  z-index: 999999999999999999999999 !important;
 }
 </style>
