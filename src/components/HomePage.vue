@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-x-hidden bg-gray-900">
+  <div class="overflow-x-hidden bg-gray-900 text-white">
     <WelcomeLoader v-if="loader" />
     <div class="px-5 lg:px-20 md:px-15" v-else>
       <NavBar />
