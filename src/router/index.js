@@ -1,92 +1,33 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Projects from '../components/pages/projects.vue'
-import articlePreview from '../components/blog/articlePreview.vue'
-import signUp from '../components/Admin/Authenticate/signUp.vue'
-import login from '../components/Admin/Authenticate/login.vue'
-import createArticles from '../components/Admin/Dashboard/createArticles.vue'
-import crudArticles from '../components/Admin/Dashboard/crudArticles.vue'
-import createProjects from '../components/Admin/Dashboard/createProjects.vue'
-import crudProjects from '../components/Admin/Dashboard/crudProjects.vue'
-import Admin from '../views/Admin.vue'
-import firebase from 'firebase/compat'
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
 
-Vue.use(VueRouter)
-
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/blog',
-    name: 'Blog',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Blog.vue')
-  },
-  {
-    path: '/signUp',
-    name: 'signUp',
-    component: signUp
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: login
-  },
-  {
-    path: '/Admin',
-    name: 'admin',
-    component: Admin,
-    meta: { requiresAuth: true },
-    children: [
-      {
-        path: '/createArticles',
-        name: 'createArticles',
-        component: createArticles
-      },
-      {
-        path: '/crudArticles',
-        name: 'crudArticles',
-        component: crudArticles
-      },
-      {
-        path: '/createProjects',
-        name: 'createProjects',
-        component: createProjects
-      },
-      {
-        path: '/crudProjects',
-        name: 'crudProjects',
-        component: crudProjects
-      }
-    ]
-  },
-  {
-    path: '/projects',
-    name: 'Projects',
-    component: Projects
-  },
-  { path: '/articlePreview', name: 'articlePreview', component: articlePreview }
-]
-
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
-
-router.beforeEach(async (to, from, next) => {
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
-  if (requiresAuth && !await firebase.getCurrentUser()) {
-    next('/login')
-  } else {
-    next()
-  }
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView,
+    },
+    {
+      path: '/about',
+      name: 'about',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AboutView.vue'),
+    },
+    {
+      path: '/catalog',
+      name: 'catalog',
+      component: () => import('../pages/catalogPage.vue'),
+    },
+    {
+      path: '/writing',
+      name: 'writing',
+      component: () => import('../pages/writingPage.vue'),
+    },
+  ],
 })
 
 export default router
