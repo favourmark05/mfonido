@@ -2,6 +2,13 @@ import thePixploreImg from '@/assets/images/thepixplore.png';
 
 
 export const writings = [{
+image: 'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8xcmkx803ddkmfjkvl6f.png',
+url:'https://dev.to/favourmark05/quality-as-a-shared-responsibility-4nf0',
+year: '2026',
+title: `Quality As A Shared Responsibility.`,
+linkText: 'dev.to'
+},
+{
 image: 'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fl7n2yigcaho1g6mn0oed.jpeg',
 url:'https://dev.to/favourmark05/writing-clean-code-best-practices-and-principles-3amh',
 year: '2023',

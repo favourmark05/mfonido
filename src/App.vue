@@ -1,63 +1,120 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue'
+import WelcomeLoader from './components/loader/WelcomeLoader.vue'
 
-// Pointer light state
-const mouseX = ref(0);
-const mouseY = ref(0);
-const pointerSize = ref(1000); // Size of the light effect in pixels
+const x = ref(0)
+const y = ref(0)
+const visible = ref(false)
 
-// Container reference to track mouse position
-const appContainer = ref(null);
+const showWelcome = ref(true)
+let welcomeTimer = null
 
-// Handle mouse movement
-const handleMouseMove = (event) => {
-  mouseX.value = event.clientX;
-  mouseY.value = event.clientY;
-};
+const onMove = (e) => {
+  x.value = e.clientX
+  y.value = e.clientY
+  visible.value = true
+}
+const onLeave = () => {
+  visible.value = false
+}
 
-// Computed style for the pointer light
-const pointerStyle = computed(() => {
-  return {
-    left: `${mouseX.value}px`,
-    top: `${mouseY.value}px`,
-    width: `${pointerSize.value}px`,
-    height: `${pointerSize.value}px`,
-    transform: 'translate(-50%, -50%)'
-  };
-});
+onMounted(() => {
+  window.addEventListener('mousemove', onMove)
+  window.addEventListener('mouseleave', onLeave)
+
+  welcomeTimer = setTimeout(() => {
+    showWelcome.value = false
+  }, 6000)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('mousemove', onMove)
+  window.removeEventListener('mouseleave', onLeave)
+  clearTimeout(welcomeTimer)
+})
 </script>
 
 <template>
-  <div class="app-container" @mousemove="handleMouseMove" ref="appContainer">
-    <div class="pointer-light" :style="pointerStyle"></div>
-    <RouterView />
+  <div class="app-shell">
+    <transition name="welcome">
+      <WelcomeLoader v-if="showWelcome" />
+    </transition>
+
+    <div
+      class="ambient-glow"
+      :style="{ left: x + 'px', top: y + 'px', opacity: visible ? 1 : 0 }"
+    />
+    <RouterView v-slot="{ Component }">
+      <transition name="page" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </RouterView>
   </div>
 </template>
 
 <style>
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.app-container {
+.app-shell {
   position: relative;
-  width: 100%;
   min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  isolation: isolate;
   overflow: hidden;
 }
 
-.pointer-light {
+.ambient-glow {
   position: fixed;
+  width: 540px;
+  height: 540px;
   border-radius: 50%;
   pointer-events: none;
+  transform: translate(-50%, -50%);
   background: radial-gradient(
     circle,
-    rgba(59, 130, 246, 0.3) 0%,
-    rgba(59, 130, 246, 0.1) 40%,
-    rgba(59, 130, 246, 0) 70%
+    rgba(110, 122, 250, 0.12) 0%,
+    rgba(110, 122, 250, 0.05) 35%,
+    rgba(110, 122, 250, 0) 70%
   );
-  z-index: 1000;
+  filter: blur(20px);
+  transition: opacity 600ms ease;
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+@media (max-width: 768px) {
+  .ambient-glow {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-glow {
+    display: none;
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 400ms var(--ease-out-expo),
+    transform 400ms var(--ease-out-expo);
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* Welcome loader fade-out */
+.welcome-leave-active {
+  transition:
+    opacity 700ms var(--ease-out-expo),
+    filter 700ms var(--ease-out-expo);
+}
+.welcome-leave-to {
+  opacity: 0;
+  filter: blur(8px);
 }
 </style>
