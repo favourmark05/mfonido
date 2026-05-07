@@ -1,279 +1,389 @@
 <script setup>
-import { ref } from 'vue'
-import IconTwitter from '../icons/IconTwitter.vue'
-import IconLinkedin from '../icons/IconLinkedin.vue'
-import IconMail from '../icons/IconMail.vue'
-import IconClose from '../icons/IconClose.vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
-const isSidebarOpen = ref(false)
-const isModalOpen = ref(false)
-const menuItems = ref([
-  { id: 1, label: 'About', section: 'about-me' },
-  { id: 2, label: 'Experience', section: 'experience' },
-  { id: 3, label: 'Tools', section: 'tools' },
-  { id: 4, label: 'Projects', section: 'projects' },
-  { id: 5, label: 'Writing', section: 'writing' },
-  { id: 6, label: 'Contact', section: 'contact' },
-])
+const route = useRoute()
+const router = useRouter()
 
-const toggleSidebar = () => {
-  isSidebarOpen.value = !isSidebarOpen.value
+const isOpen = ref(false)
+const scrolled = ref(false)
+const isHome = computed(() => route.path === '/')
+
+const items = [
+  { label: 'About', target: 'about' },
+  { label: 'Experience', target: 'experience' },
+  { label: 'Stack', target: 'stack' },
+  { label: 'Work', target: 'work' },
+  { label: 'Community', target: 'community' },
+  { label: 'Open Source', target: 'open-source' },
+  { label: 'Writing', target: 'writing' },
+]
+
+const onScroll = () => {
+  scrolled.value = window.scrollY > 12
+}
+onMounted(() => {
+  window.addEventListener('scroll', onScroll, { passive: true })
+  onScroll()
+})
+onUnmounted(() => window.removeEventListener('scroll', onScroll))
+
+const scrollToId = (id) => {
+  const el = document.getElementById(id)
+  if (!el) return
+  const top = el.getBoundingClientRect().top + window.scrollY - 88
+  window.scrollTo({ top, behavior: 'smooth' })
 }
 
-const handleMenuClick = (section) => {
-  if (section === 'contact') {
-    isModalOpen.value = true
-    isSidebarOpen.value = false
+const handleClick = async (target) => {
+  isOpen.value = false
+  if (!isHome.value) {
+    await router.push('/')
+    requestAnimationFrame(() => scrollToId(target))
   } else {
-    scrollToSection(section)
-    isSidebarOpen.value = false
+    scrollToId(target)
   }
 }
 
-const scrollToSection = (sectionId) => {
-  const el = document.getElementById(sectionId)
-  if (el) {
-    const headerOffset = 100
-    const elementPosition = el.getBoundingClientRect().top + window.scrollY
-    const offsetPosition = elementPosition - headerOffset
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
-    })
+const goHome = async () => {
+  isOpen.value = false
+  if (!isHome.value) {
+    await router.push('/')
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-}
-
-const closeModal = () => {
-  isModalOpen.value = false
 }
 </script>
 
 <template>
-  <div class="index">
-    <!-- Mobile Sidebar Overlay -->
-    <div
-      v-if="isSidebarOpen"
-      class="fixed inset-0 bg-blue-600 bg-opacity-10 opacity-85 z-50 sm:hidden"
-      @click="toggleSidebar"
-    ></div>
+  <header class="nav" :class="{ 'nav--scrolled': scrolled }">
+    <div class="nav__inner container">
+      <button class="nav__brand" @click="goHome" aria-label="Go to top">
+        <span class="nav__brand-mark">M</span>
+        <span class="nav__brand-name">Mfonido Mark</span>
+      </button>
 
-    <!-- Sidebar with Transition -->
-    <transition name="sidebar">
-      <div
-        v-if="isSidebarOpen"
-        class="fixed top-0 left-0 w-3/4 h-full bg-gray-900 text-white z-50 sm:hidden w-full"
-      >
-        <div class="flex justify-end p-4">
-          <button @click="toggleSidebar" class="text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 384 512"
-              class="w-6 h-6 text-white-200"
-              fill="currentColor"
-            >
-              <path
-                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
-              />
-            </svg>
-          </button>
-        </div>
-        <nav class="space-y-6 p-4 text-center text-2xl">
-          <a
-            v-for="item in menuItems"
-            :key="item.id"
-            @click.prevent="handleMenuClick(item.section)"
-            class="hover:underline block"
-            >{{ item.label }}</a
-          >
-          <a
-              href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view"
-              target="_blank"
-              class="relative px-5 py-2 rounded-xl font-medium text-white bg-black transition-all duration-300 hover:bg-gray-800 glow-border"
-            >
-              Resume
-            </a>
-        </nav>
-      </div>
-    </transition>
+      <nav class="nav__links" aria-label="Primary">
+        <button
+          v-for="i in items"
+          :key="i.target"
+          class="nav__link"
+          @click="handleClick(i.target)"
+        >
+          {{ i.label }}
+        </button>
+      </nav>
 
-    <!-- Header for larger screens -->
-    <div class="fixed top-0 left-0 p-2 mt-4 md:m-6 w-full sm:w-2/3 lg:w-3/5 rounded-full">
-      <!-- Background Layer -->
-      <div class="absolute inset-0 bg-blue-600 opacity-50 blur-sm border-xl rounded-full"></div>
-      <!-- Content -->
-      <div class="relative flex items-center justify-between p-1">
-        <!-- Logo and Links -->
-        <div class="flex items-center space-x-6">
-          <!-- Logo -->
-          <div
-            class="flex items-center text-white space-x-2 cursor-pointer"
-            @click.prevent="scrollToSection('mfonido-mark')"
-          >
-            <div class="rounded-full bg-white w-6 h-6 flex items-center justify-center">
-              <span class="text-blue-600 font-bold">M</span>
-            </div>
-            <span class="font-bold text-lg">Mfonido Mark</span>
-          </div>
-        </div>
-        <!-- Buttons and Mobile Toggle Button -->
-        <div class="flex items-center space-x-4">
-          <button @click="toggleSidebar" class="sm:hidden text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"
-              class="w-6 h-6 text-white-200"
-              fill="currentColor"
-            >
-              <path
-                d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
-              />
-            </svg>
-          </button>
-          <div class="hidden sm:flex items-center space-x-4">
-            <!-- Navigation Links -->
-            <nav class="sm:flex space-x-4 text-white px-2">
-              <a
-                v-for="item in menuItems"
-                :key="item.id"
-                @click.prevent="handleMenuClick(item.section)"
-                class="hover:underline cursor-pointer"
-              >
-                {{ item.label }}
-              </a>
-            </nav>
-            <a
-              href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view"
-              target="_blank"
-              class="relative px-5 py-2 rounded-xl font-medium text-white bg-black transition-all duration-300 hover:bg-gray-800 glow-border"
-            >
-              Resume
-            </a>
-          </div>
-        </div>
+      <div class="nav__actions">
+        <a
+          href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost nav__resume"
+        >
+          Résumé
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path
+              d="M5 9l5-5M10 4H6m4 0v4"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+        <button class="btn btn-primary nav__contact" @click="handleClick('contact')">
+          Get in touch
+        </button>
+        <button
+          class="nav__menu-btn"
+          :aria-expanded="isOpen"
+          aria-label="Toggle menu"
+          @click="isOpen = !isOpen"
+        >
+          <span :class="['nav__menu-icon', { 'is-open': isOpen }]" />
+        </button>
       </div>
     </div>
 
-    <transition name="fade">
-      <div
-        v-if="isModalOpen"
-        @click="closeModal"
-        class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-md index"
-      >
-        <div
-          class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-8 w-[380px] relative text-center transform transition-all scale-100 hover:scale-105"
-          @click.stop
-        >
-          <!-- Close Button -->
+    <!-- Mobile menu -->
+    <transition name="mobile">
+      <div v-if="isOpen" class="nav__mobile" @click.self="isOpen = false">
+        <div class="nav__mobile-panel">
           <button
-            @click="closeModal"
-            class="absolute top-3 right-4 text-gray-500 dark:text-gray-300 transition cursor-pointer"
+            v-for="i in items"
+            :key="i.target"
+            class="nav__mobile-link"
+            @click="handleClick(i.target)"
           >
-            <IconClose />
+            {{ i.label }}
           </button>
-
-          <!-- Modal Header -->
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">Let's Connect!</h2>
-          <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
-            Choose a platform to reach out.
-          </p>
-
-          <!-- Contact Options -->
-          <div class="flex justify-center gap-6">
-            <!-- Twitter -->
+          <div class="nav__mobile-actions">
             <a
-              href="https://x.com/MfonidoMark"
+              href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view"
               target="_blank"
-              class="text-blue-700 cursor-pointer p-4 text-3xl transition hover:scale-110"
+              rel="noopener noreferrer"
+              class="btn btn-ghost"
             >
-              <IconTwitter />
+              Résumé
             </a>
-
-            <!-- LinkedIn -->
-            <a
-              href="https://linkedin.com/in/mfonido-mark-4baa42120/"
-              target="_blank"
-              class="text-blue-700 cursor-pointer p-4 text-3xl transition hover:scale-110"
-            >
-              <IconLinkedin />
-            </a>
-
-            <!-- Email -->
-            <a
-              href="mailto:mfonidomark@gmail.com"
-              class="text-blue-700 cursor-pointer p-4 text-3xl transition hover:scale-110"
-            >
-              <IconMail />
-            </a>
+            <button class="btn btn-primary" @click="handleClick('contact')">
+              Get in touch
+            </button>
           </div>
         </div>
       </div>
     </transition>
-  </div>
+  </header>
 </template>
 
 <style scoped>
-/* Add transition styles for the sidebar */
-.sidebar-enter-active,
-.sidebar-leave-active {
-  transition: transform 0.3s ease;
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0.85rem 0;
+  transition:
+    background-color 320ms var(--ease-out-quart),
+    border-color 320ms var(--ease-out-quart),
+    backdrop-filter 320ms var(--ease-out-quart);
+  border-bottom: 1px solid transparent;
+}
+.nav--scrolled {
+  background: rgba(10, 10, 11, 0.7);
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  border-bottom-color: var(--color-border);
 }
 
-.sidebar-enter, .sidebar-leave-to /* .sidebar-leave-active in <2.1.8 */ {
-  transform: translateX(-100%);
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
-/* Glowing Animated Border */
-.glow-border {
+
+/* Brand */
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-fg-strong);
+}
+.nav__brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--color-fg-strong);
+  color: var(--color-bg);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.04em;
+}
+.nav__brand-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 480px) {
+  .nav__brand-name {
+    display: none;
+  }
+}
+
+/* Links */
+.nav__links {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+@media (min-width: 1024px) {
+  .nav__links {
+    display: flex;
+  }
+}
+.nav__link {
+  background: none;
+  border: 0;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition:
+    color 220ms var(--ease-out-quart),
+    background-color 220ms var(--ease-out-quart);
+}
+.nav__link:hover {
+  color: var(--color-fg-strong);
+  background: var(--color-bg-elev-1);
+}
+
+/* Actions */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.nav__resume {
+  display: none;
+}
+@media (min-width: 640px) {
+  .nav__resume {
+    display: inline-flex;
+  }
+}
+
+.nav__contact {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .nav__contact {
+    display: inline-flex;
+  }
+}
+
+/* Burger */
+.nav__menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--color-fg);
+}
+@media (min-width: 1024px) {
+  .nav__menu-btn {
+    display: none;
+  }
+}
+.nav__menu-icon {
   position: relative;
-  overflow: hidden;
-  border-radius: 12px;
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: currentColor;
+  transition: background 0ms 200ms;
 }
-
-.glow-border::before {
+.nav__menu-icon::before,
+.nav__menu-icon::after {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  padding: 2px; /* Border thickness */
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #0051ff,
-    #7700ff,
-    #ff00c3,
-    #ff0000
-  );
-  background-size: 300% 300%;
-  animation: glow 6s linear infinite;
-  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
-  mask-composite: exclude;
+  left: 0;
+  width: 16px;
+  height: 1.5px;
+  background: currentColor;
+  transition:
+    top 200ms 200ms,
+    transform 200ms;
+}
+.nav__menu-icon::before {
+  top: -5px;
+}
+.nav__menu-icon::after {
+  top: 5px;
+}
+.nav__menu-icon.is-open {
+  background: transparent;
+}
+.nav__menu-icon.is-open::before,
+.nav__menu-icon.is-open::after {
+  transition:
+    top 200ms,
+    transform 200ms 200ms;
+  top: 0;
+}
+.nav__menu-icon.is-open::before {
+  transform: rotate(45deg);
+}
+.nav__menu-icon.is-open::after {
+  transform: rotate(-45deg);
 }
 
-@keyframes glow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Mobile panel */
+.nav__mobile {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 11, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 90;
+  padding-top: 88px;
+  display: flex;
+  justify-content: center;
 }
-/* Modal Transition */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+.nav__mobile-panel {
+  width: min(420px, calc(100% - 2.5rem));
+  height: fit-content;
+  background: var(--color-bg-elev-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
-.fade-enter,
-.fade-leave-to {
+.nav__mobile-link {
+  background: none;
+  border: 0;
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-size: 1.05rem;
+  color: var(--color-fg);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition:
+    background-color 220ms var(--ease-out-quart),
+    color 220ms var(--ease-out-quart);
+  letter-spacing: -0.01em;
+}
+.nav__mobile-link:hover {
+  background: var(--color-bg-elev-2);
+  color: var(--color-fg-strong);
+}
+.nav__mobile-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+.nav__mobile-actions .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+.mobile-enter-active,
+.mobile-leave-active {
+  transition: opacity 240ms var(--ease-out-quart);
+}
+.mobile-enter-active .nav__mobile-panel,
+.mobile-leave-active .nav__mobile-panel {
+  transition:
+    transform 320ms var(--ease-out-expo),
+    opacity 240ms var(--ease-out-quart);
+}
+.mobile-enter-from,
+.mobile-leave-to {
   opacity: 0;
-  transform: scale(0.95);
 }
-.index {
-  z-index: 99999;
+.mobile-enter-from .nav__mobile-panel,
+.mobile-leave-to .nav__mobile-panel {
+  transform: translateY(-8px);
+  opacity: 0;
 }
 </style>

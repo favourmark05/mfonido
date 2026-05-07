@@ -1,64 +1,214 @@
+<script setup>
+import SectionHeader from './ui/SectionHeader.vue'
+import { experience } from '@/Api/experience.js'
+</script>
+
 <template>
-  <div class="px-1 lg:px-40 md:px-30 mt-20 mb-20">
-    <header class="flex items-center space-x-4">
-      <p class="text-blue-500">O2</p>
-      <p
-        class="text-xl lg:text-5xl md:text-4xl font-extrabold font-mono text-gray-600"
-        style="font-weight: bolder"
+  <section id="experience" class="experience container">
+    <SectionHeader
+      index="02"
+      eyebrow="Experience"
+      title="Where I’ve shipped — and what I shipped there."
+      description="Six years of building production frontends across fintech, payments, e-commerce, and developer platforms. Each role pushed the bar on craft, performance, and the experience of the engineers around me."
+    />
+
+    <ol class="timeline">
+      <li
+        v-for="(role, i) in experience"
+        :key="role.company"
+        class="timeline__item"
+        v-reveal="{ delay: i * 60 }"
       >
-        Experience
-      </p>
-      <p class="w-35 lg:w-70 md:w-60 h-px bg-gray-700"></p>
-    </header>
-    <p class="my-4 text-justify lg:max-w-335">
-      Over the years, I’ve had the opportunity to work with dynamic teams across fintech,
-      e-commerce, sports, logistics, and more. Each role has sharpened my technical skills,
-      problem-solving abilities, and understanding of how technology drives business success. From
-      crafting seamless frontend experiences to optimizing developer ecosystems, I’ve contributed to
-      impactful projects that bridge user needs with technical excellence. Here’s a glimpse into my
-      journey so far: 🌟
-    </p>
-    <Vue3Marquee :clone="true" :pause-on-hover="true">
-      <div class="card p-2" v-for="img in imgArray" :key="img">
-        <a :href="img.url" target="_blank" rel="noopener noreferrer">
-          <img
-            :src="img.img"
-            class="h-30 w-50 object-contain rounded-lg grayscale hover:grayscale-0 transition duration-300"
-          />
-          <p class="text-center text-sm font-semibold">{{ img.title }}</p>
-        </a>
-      </div>
-    </Vue3Marquee>
-  </div>
+        <div class="timeline__rail" aria-hidden="true">
+          <div class="timeline__dot" />
+          <div class="timeline__line" v-if="i !== experience.length - 1" />
+        </div>
+
+        <article class="timeline__card">
+          <header class="timeline__head">
+            <div class="timeline__head-main">
+              <h3 class="timeline__role">{{ role.role }}</h3>
+              <a
+                class="timeline__company link-underline"
+                :href="role.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ role.company }}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="timeline__head-meta">
+              <span class="timeline__period font-mono">{{ role.period }}</span>
+              <span class="timeline__location">{{ role.location }}</span>
+            </div>
+          </header>
+
+          <p class="timeline__summary">{{ role.summary }}</p>
+
+          <ul class="timeline__highlights">
+            <li v-for="h in role.highlights" :key="h">{{ h }}</li>
+          </ul>
+
+          <div class="timeline__stack">
+            <span v-for="t in role.stack" :key="t" class="pill">{{ t }}</span>
+          </div>
+        </article>
+      </li>
+    </ol>
+  </section>
 </template>
 
-<script setup>
-import { Vue3Marquee } from 'vue3-marquee'
-const imgArray = [
-  {
-    url: 'https://remita.net/',
-    img: '/experience/remita-logo.jpg',
-    title: 'Remita',
-  },
-  {
-    url: 'https://cygnusspin.com/',
-    img: '/experience/cygnusspin.png',
-    title: 'Cygnusspin',
-  },
-  {
-    url: 'https://croxxtalent.com/',
-    img: '/experience/croxxtalent_logo.png',
-    title: 'Croxxtalent',
-  },
-  {
-    url: 'https://scelloo.com/',
-    img: '/experience/scelloo_cover.jpeg',
-    title: 'Scelloo',
-  },
-  {
-    url: 'https://sellersmart.ng/',
-    img: '/experience/sellersmart.png',
-    title: 'SellersMart',
-  },
-]
-</script>
+<style scoped>
+.experience {
+  padding-top: var(--section-gap-y);
+  padding-bottom: var(--section-gap-y);
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline__item {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 1.25rem;
+  padding-bottom: 2.5rem;
+}
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__rail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+.timeline__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--color-bg);
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-soft);
+  flex-shrink: 0;
+  z-index: 1;
+}
+.timeline__line {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--color-accent-soft), var(--color-border));
+  margin-top: 0.5rem;
+  min-height: 2rem;
+}
+
+.timeline__card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  background: var(--color-bg-elev-1);
+  transition:
+    border-color 280ms var(--ease-out-quart),
+    background-color 280ms var(--ease-out-quart);
+}
+.timeline__card:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-bg-elev-2);
+}
+
+.timeline__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+.timeline__head-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.timeline__role {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-fg-strong);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.timeline__company {
+  font-size: 0.92rem;
+  color: var(--color-fg-muted);
+  text-decoration: none;
+}
+.timeline__head-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.timeline__period {
+  font-size: 0.78rem;
+  color: var(--color-accent-strong);
+  letter-spacing: 0.02em;
+}
+.timeline__location {
+  font-size: 0.78rem;
+  color: var(--color-fg-subtle);
+}
+
+.timeline__summary {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-fg);
+  margin: 0 0 1rem;
+}
+
+.timeline__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.timeline__highlights li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-fg-muted);
+}
+.timeline__highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  width: 8px;
+  height: 1px;
+  background: var(--color-fg-faint);
+}
+
+.timeline__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+@media (max-width: 640px) {
+  .timeline__head {
+    flex-direction: column;
+  }
+  .timeline__head-meta {
+    text-align: left;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+  .timeline__card {
+    padding: 1.25rem 1rem;
+  }
+}
+</style>
