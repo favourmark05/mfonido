@@ -1,9 +1,13 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import WelcomeLoader from './components/loader/WelcomeLoader.vue'
 
 const x = ref(0)
 const y = ref(0)
 const visible = ref(false)
+
+const showWelcome = ref(true)
+let welcomeTimer = null
 
 const onMove = (e) => {
   x.value = e.clientX
@@ -17,15 +21,25 @@ const onLeave = () => {
 onMounted(() => {
   window.addEventListener('mousemove', onMove)
   window.addEventListener('mouseleave', onLeave)
+
+  welcomeTimer = setTimeout(() => {
+    showWelcome.value = false
+  }, 6000)
 })
+
 onUnmounted(() => {
   window.removeEventListener('mousemove', onMove)
   window.removeEventListener('mouseleave', onLeave)
+  clearTimeout(welcomeTimer)
 })
 </script>
 
 <template>
   <div class="app-shell">
+    <transition name="welcome">
+      <WelcomeLoader v-if="showWelcome" />
+    </transition>
+
     <div
       class="ambient-glow"
       :style="{ left: x + 'px', top: y + 'px', opacity: visible ? 1 : 0 }"
@@ -48,7 +62,6 @@ onUnmounted(() => {
   overflow: hidden;
 }
 
-/* Subtle cursor-following glow — replaces the rainbow effect */
 .ambient-glow {
   position: fixed;
   width: 540px;
@@ -79,7 +92,6 @@ onUnmounted(() => {
   }
 }
 
-/* Page transition — soft cross-fade */
 .page-enter-active,
 .page-leave-active {
   transition:
@@ -93,5 +105,16 @@ onUnmounted(() => {
 .page-leave-to {
   opacity: 0;
   transform: translateY(-8px);
+}
+
+/* Welcome loader fade-out */
+.welcome-leave-active {
+  transition:
+    opacity 700ms var(--ease-out-expo),
+    filter 700ms var(--ease-out-expo);
+}
+.welcome-leave-to {
+  opacity: 0;
+  filter: blur(8px);
 }
 </style>

@@ -76,7 +76,7 @@ const goHome = async () => {
 
       <div class="nav__actions">
         <a
-          href="https://drive.google.com/file/d/1EjMYQEV6Asdltezw19S-aLy9bSIaWNFA/view"
+          href="https://drive.google.com/file/d/1FXAqMB2HcmolcJJJX0DyYK7e5PlVcr_B/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-ghost nav__resume"
