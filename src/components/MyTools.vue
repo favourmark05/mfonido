@@ -18,6 +18,10 @@ import IconGithub from './icons/IconGithub.vue'
 import IconFigma from './icons/IconFigma.vue'
 import IconNotion from './icons/IconNotion.vue'
 import IconTrello from './icons/IconTrello.vue'
+import IconSupabase from './icons/IconSupabase.vue'
+import IconPinia from './icons/IconPinia.vue'
+import IconTanstackQuery from './icons/IconTanstackQuery.vue'
+import IconAxios from './icons/IconAxios.vue'
 
 const groups = [
   {
@@ -31,6 +35,9 @@ const groups = [
       { name: 'TypeScript', icon: IconTypescript },
       { name: 'JavaScript', icon: IconJs },
       { name: 'Node.js', icon: IconNode },
+      { name: 'Pinia', icon: IconPinia },
+      { name: 'TanStack Query', icon: IconTanstackQuery },
+      { name: 'Axios', icon: IconAxios },
     ],
   },
   {
@@ -48,6 +55,7 @@ const groups = [
     items: [
       { name: 'Git / GitHub', icon: IconGithub },
       { name: 'Firebase', icon: IconFirebase },
+      { name: 'Supabase', icon: IconSupabase },
       { name: 'Figma', icon: IconFigma },
       { name: 'Notion', icon: IconNotion },
       { name: 'Trello', icon: IconTrello },

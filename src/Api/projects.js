@@ -2,6 +2,8 @@ import thePixploreImg from '@/assets/images/thepixplore.png';
 import developerImg from '@/assets/images/developer.png'
 import blogImg from '@/assets/images/blogs.png'
 import BetPlatformImg from '@/assets/images/online.png'
+import sellersmartImg from '@/assets/images/sellersmart.png'
+import mdBeautyParlourImg from '@/assets/images/mdbeautyparlour.png'
 
 
 export const projects = [{
@@ -82,7 +84,7 @@ linkText: 'thepixplore.netlify.app'
     linkText: 'rumuomasichurchofchrist.org'
     },
   {
-    image: blogImg || './assets/images/thepixplore.png',
+    image: sellersmartImg,
     url:'https://sellersmart.ng/',
     title: 'SellersMart E-commerce',
     description: `A dedicated blog platform for Remita, featuring insightful articles on fintech trends, payment solutions, API integrations, and industry best practices. Developers, businesses, and financial experts can explore in-depth guides, case studies, and updates on Remita’s products and services. The blog also provides tutorials, use cases, and expert opinions to help users maximize the potential of Remita’s payment ecosystem.`,
@@ -94,5 +96,21 @@ linkText: 'thepixplore.netlify.app'
     company: 'Sellers Mart',
     year: 2023,
     linkText: 'sellersmart.ng'
+    },
+  {
+    image: mdBeautyParlourImg,
+    url:'https://mdbeautyparlour.com/',
+    title: 'MD Beauty Parlour',
+    description: `A full salon and spa operating system for MD Beauty Parlour — guest booking with live slot availability, a role-gated admin dashboard covering appointments, chair/room scheduling, POS checkout, inventory, CRM, staff access, finance, and reporting. Built solo end to end, front and back office.`,
+    technology: [
+      'Nuxt 4',
+      'Vue 3',
+      'Firebase',
+      'Tailwind CSS',
+      'Netlify',
+    ],
+    company: 'MD Beauty Parlour',
+    year: 2026,
+    linkText: 'mdbeautyparlour.com'
     },
   ]
