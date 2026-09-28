@@ -44,6 +44,48 @@ export const caseStudies = {
     ],
   },
 
+  mdbeautyparlour: {
+    slug: 'mdbeautyparlour',
+    title: 'MD Beauty Parlour',
+    company: 'MD Beauty Parlour',
+    year: '2026',
+    role: 'Full Stack Engineer',
+    url: 'https://mdbeautyparlour.com/',
+    linkText: 'mdbeautyparlour.com',
+    headline: 'A full salon operating system — booking, scheduling, POS, and the back office that runs it.',
+    summary:
+      'MD Beauty Parlour needed more than a booking form — a system to run the salon floor day to day: live availability, chair and room scheduling, point-of-sale, inventory, staff access, and the financial reporting behind all of it. I built the whole thing, public booking flow through admin backend, solo.',
+    stack: ['Nuxt 4', 'Vue 3', 'Firebase', 'Firestore', 'Tailwind CSS', 'Netlify'],
+    sections: [
+      {
+        kind: 'block',
+        heading: 'The problem',
+        body: 'Bookings were tracked over phone calls and DMs, chairs and treatment rooms were scheduled from memory, and sales were rung up with nothing tying inventory, promotions, and receipts together. There was no single system connecting what clients saw to what actually happened on the salon floor.',
+      },
+      {
+        kind: 'block',
+        heading: 'Approach',
+        body: 'Nuxt 4 and Vue 3 power both the public storefront and a role-gated admin app, with Firebase and Firestore as the real-time backend for availability, bookings, and staff access. A Nitro API layer handles the logic that shouldn’t live in the client: slot availability, transactional POS sales, staff access changes, and a scheduled job that expires stale bookings and opens up completed ones for review.',
+      },
+      {
+        kind: 'list',
+        heading: 'Key decisions',
+        items: [
+          'Guest-code booking instead of accounts — clients book and check status by confirmation code, no login required.',
+          'Nitro API routes for availability and POS sale creation, so slot logic and inventory/gift-card/promo math run server-side and transactionally, not in the client.',
+          'A role-gated admin (admin/staff) covering the full operation — appointments, chair/room scheduling with overdue detection, POS with promo and gift-card support, CRM, staff and stylist management, finance (invoices, expenses, commissions), and an audit-logged activity trail.',
+          'Firestore security rules scoped across roughly twenty collections, plus seed and maintenance scripts for safely resetting catalog and launch data between environments.',
+          'Payments recorded manually through POS rather than wiring up a payment gateway or SMS provider before the business needed one — scope held to what was actually load-bearing.',
+        ],
+      },
+      {
+        kind: 'block',
+        heading: 'Outcome',
+        body: 'A system that runs the whole salon, not just its booking form — the front desk takes bookings and payments, the back office runs reports and manages staff access, and the public site stays fast and simple for the client booking a haircut.',
+      },
+    ],
+  },
+
   pixplore: {
     slug: 'pixplore',
     title: 'PixPlore',
@@ -81,6 +123,47 @@ export const caseStudies = {
         kind: 'block',
         heading: 'Outcome',
         body: 'A small, sharp consumer experience — and a reference for clean Vue 3 patterns I lean on in client work.',
+      },
+    ],
+  },
+
+  sellersmart: {
+    slug: 'sellersmart',
+    title: 'SellersMart E-commerce',
+    company: 'Sellers Mart',
+    year: '2023',
+    role: 'Frontend Engineer',
+    url: 'https://sellersmart.ng/',
+    linkText: 'sellersmart.ng',
+    headline: 'A multi-vendor storefront built to handle catalog scale without buckling.',
+    summary:
+      'SellersMart needed a storefront that could carry a wide multi-category catalog — from arts and crafts to electronics — without every category page turning into its own bespoke build.',
+    stack: ['Nuxt', 'Vuex', 'Bootstrap'],
+    sections: [
+      {
+        kind: 'block',
+        heading: 'The problem',
+        body: 'A growing multi-vendor catalog meant new categories and promotions were shipping constantly. The existing approach hard-coded layout per category, so every addition meant new markup and new bugs.',
+      },
+      {
+        kind: 'block',
+        heading: 'Approach',
+        body: 'Nuxt for routing and SEO-friendly rendering, Vuex for shared cart and session state across storefront and checkout, Bootstrap as a fast, consistent base layer for grids, cards, and forms across every category page.',
+      },
+      {
+        kind: 'list',
+        heading: 'Key decisions',
+        items: [
+          'One data-driven category template instead of bespoke markup per category.',
+          'Vuex as the single source of truth for cart state shared across storefront, cart, and checkout views.',
+          'Bootstrap grid utilities for rapid, consistent catalog and promo-banner layouts.',
+          'Server-rendered category and product pages via Nuxt for indexable, fast first paint.',
+        ],
+      },
+      {
+        kind: 'block',
+        heading: 'Outcome',
+        body: 'A storefront that scales by adding data, not code — new categories and campaigns ship without touching the template layer.',
       },
     ],
   },
@@ -127,4 +210,4 @@ export const caseStudies = {
   },
 }
 
-export const featuredCaseStudies = ['remita-developer', 'pixplore', 'cygnusspin']
+export const featuredCaseStudies = ['mdbeautyparlour', 'sellersmart', 'cygnusspin']

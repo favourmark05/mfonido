@@ -52,7 +52,7 @@ const socials = [
           </svg>
         </a>
         <a
-          href="https://drive.google.com/file/d/1FXAqMB2HcmolcJJJX0DyYK7e5PlVcr_B/view?usp=sharing"
+          href="https://drive.google.com/file/d/17RFPjx31uitsojIqY98qNWu6Dh81dcpT/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-ghost"
